@@ -1,0 +1,9 @@
+source /usr/local/share/pdk/sky130A/libs.tech/xschem/xschemrc
+
+# Make movement similar to virtuoso
+set intuitive_interface 1
+
+# Separate netlist into folders by name, should make simulation easier
+set local_netlist_dir 2
+
+
