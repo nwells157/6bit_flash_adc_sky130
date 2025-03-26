@@ -26,7 +26,6 @@ unitx=1
 logx=0
 logy=0
 sim_type=tran
-rawfile=$netlist_dir/tb_comp_top.raw
 autoload=1
 linewidth_mult=2}
 N 80 -300 80 -270 {lab=GND}
@@ -36,20 +35,14 @@ N 80 -400 80 -360 {lab=VDD}
 N 160 -400 160 -360 {lab=VSS}
 N 340 -120 340 -90 {lab=GND}
 N 340 -220 340 -180 {lab=VIN}
-N 640 -120 640 -90 {lab=GND}
-N 640 -220 640 -180 {lab=VREF}
-N 810 -490 840 -490 {lab=vout}
-N 700 -620 700 -590 {lab=VDD}
-N 550 -500 580 -500 {lab=VIN}
-N 550 -480 580 -480 {lab=VREF}
-N 700 -390 700 -360 {lab=VSS}
+N 610 -460 640 -460 {lab=VIN}
 C {code.sym} 60 -200 0 0 {name=sim_code only_toplevel=false value="
 
 # Model files
 .lib /usr/local/share/pdk/sky130A/libs.tech/ngspice/sky130.lib.spice tt
 
 # Main parameters
-.param vdd=1.8 vss=0 vref='vdd/2' vhigh=1.8 vlow=0
+.param vdd=1.8 vss=0 vhigh=1.8 vlow=0
 .param sin_offset='vdd/2'
 .param sin_amp='vdd/2'
 .param sin_freq=10Meg
@@ -80,7 +73,7 @@ run
 # Save expressions
 
 # Write to raw file
-write tb_comp_top.raw
+write tb_comp_stage_top.raw
 # wrdata custom_output.txt
 
 
@@ -96,17 +89,19 @@ C {lab_pin.sym} 160 -400 0 0 {name=p7 sig_type=std_logic lab=VSS}
 C {vsource.sym} 340 -150 0 0 {name=V3 value="DC 0 AC 1 SIN(\{sin_offset\} \{sin_amp\} \{sin_freq\})"}
 C {gnd.sym} 340 -90 0 0 {name=l2 lab=GND}
 C {lab_pin.sym} 340 -220 0 0 {name=p11 sig_type=std_logic lab=VIN}
-C {lab_pin.sym} 700 -620 0 0 {name=p1 lab=VDD}
-C {lab_pin.sym} 700 -360 0 0 {name=p2 lab=VSS}
-C {lab_pin.sym} 550 -500 0 0 {name=p3 lab=VIN}
-C {lab_pin.sym} 840 -490 0 1 {name=p4 lab=vout}
-C {lab_pin.sym} 550 -480 0 0 {name=p5 lab=VREF}
-C {vsource.sym} 640 -150 0 0 {name=V4 value=vref}
-C {gnd.sym} 640 -90 0 0 {name=l3 lab=GND}
-C {lab_pin.sym} 640 -220 0 0 {name=p8 sig_type=std_logic lab=VREF}
+C {lab_pin.sym} 610 -460 0 0 {name=p3 lab=VIN}
 C {devices/launcher.sym} 90 -40 0 0 {name=h17 
 descr="Load waves" 
 tclcommand="
 xschem raw_read $netlist_dir/[file tail [file rootname [xschem get current_name]]].raw tran
 "
 }
+C {comp_stage_top_ideal.sym} 790 -490 0 0 {name=xCOMP_STAGE}
+C {ref_ladder_top.sym} 260 -560 0 0 {name=xREF_LADDER}
+C {lab_pin.sym} 110 -570 0 0 {name=p9 lab=VDD}
+C {lab_pin.sym} 410 -570 0 1 {name=p10 lab=vref[62..0]}
+C {lab_pin.sym} 110 -550 0 0 {name=p12 lab=VSS}
+C {lab_pin.sym} 640 -520 0 0 {name=p13 lab=VDD}
+C {lab_pin.sym} 640 -500 0 0 {name=p14 lab=VSS}
+C {lab_pin.sym} 640 -480 0 0 {name=p15 lab=vref[62..0]}
+C {lab_pin.sym} 940 -520 0 1 {name=p1 lab=vout[62..0]}

@@ -110,3 +110,4 @@ tclcommand="
 xschem raw_read $netlist_dir/[file tail [file rootname [xschem get current_name]]].raw tran
 "
 }
+C {ideal_comp.sym} 700 -490 0 0 {name=x1}
