@@ -11,16 +11,13 @@ N 90 -270 90 -260 {lab=GND}
 N 120 -270 140 -270 {lab=GND}
 N 60 -400 60 -360 {lab=VDD}
 N 140 -400 140 -360 {lab=VSS}
-N 840 -350 1030 -350 {lab=vref[62..0]}
-C {vsource.sym} 60 -330 0 0 {name=V1 value=vdd savecurrent=false}
-C {vsource.sym} 140 -330 0 0 {name=V2 value=vss savecurrent=false}
-C {gnd.sym} 90 -260 0 0 {name=l1 lab=GND}
-C {lab_pin.sym} 60 -400 0 0 {name=p1 sig_type=std_logic lab=VDD}
-C {lab_pin.sym} 140 -400 0 0 {name=p2 sig_type=std_logic lab=VSS}
-C {lab_pin.sym} 880 -350 0 1 {name=p3 lab=vref[62..0]}
-C {lab_pin.sym} 540 -350 0 0 {name=p4 lab=VDD}
-C {lab_pin.sym} 540 -330 0 0 {name=p5 lab=VSS}
-C {code.sym} 50 -170 0 0 {name=sim_code only_toplevel=false value="
+C {schematics/ref_ladder_top.sym} 690 -340 0 0 {name=x1}
+C {devices/vsource.sym} 60 -330 0 0 {name=V3 value=vdd savecurrent=false}
+C {devices/vsource.sym} 140 -330 0 0 {name=V1 value=vss savecurrent=false}
+C {devices/lab_pin.sym} 60 -400 0 0 {name=p6 sig_type=std_logic lab=VDD}
+C {devices/lab_pin.sym} 140 -400 0 0 {name=p1 sig_type=std_logic lab=VSS}
+C {devices/gnd.sym} 90 -260 0 0 {name=l1 lab=GND}
+C {devices/code.sym} 30 -160 0 0 {name=sim_code1 only_toplevel=false value="
 .lib /usr/local/share/pdk/sky130A/libs.tech/ngspice/sky130.lib.spice tt
 
 .param vdd=1.8 vss=0
@@ -38,10 +35,12 @@ wrdata data.txt vref0 vref1 vref2 vref3 vref4 vref5 vref6 vref7 vref8 vref9 vref
 
 
 "}
-C {code.sym} 210 -170 0 0 {name=save_bus only_toplevel=false value="
+C {devices/code.sym} 200 -160 0 0 {name=save_bus1 only_toplevel=false value="
 
 
 
 
 "}
-C {/home/nwells/xschem/6_bit_flash/schematics/ref_ladder_top.sym} 690 -340 0 0 {name=x1}
+C {devices/lab_pin.sym} 540 -350 0 0 {name=p2 lab=VDD}
+C {devices/lab_pin.sym} 540 -330 0 0 {name=p3 lab=VSS}
+C {devices/lab_pin.sym} 840 -350 0 1 {name=p4 lab=vref[62..0]}

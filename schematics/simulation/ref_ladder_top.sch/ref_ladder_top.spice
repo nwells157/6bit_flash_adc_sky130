@@ -1,0 +1,73 @@
+** sch_path: /home/nwells/xschem/6_bit_flash/schematics/ref_ladder_top.sch
+**.subckt ref_ladder_top VDD
+*+ vref62,vref61,vref60,vref59,vref58,vref57,vref56,vref55,vref54,vref53,vref52,vref51,vref50,vref49,vref48,vref47,vref46,vref45,vref44,vref43,vref42,vref41,vref40,vref39,vref38,vref37,vref36,vref35,vref34,vref33,vref32,vref31,vref30,vref29,vref28,vref27,vref26,vref25,vref24,vref23,vref22,vref21,vref20,vref19,vref18,vref17,vref16,vref15,vref14,vref13,vref12,vref11,vref10,vref9,vref8,vref7,vref6,vref5,vref4,vref3,vref2,vref1,vref0 VSS
+*.ipin VDD
+*.opin
+*+ vref62,vref61,vref60,vref59,vref58,vref57,vref56,vref55,vref54,vref53,vref52,vref51,vref50,vref49,vref48,vref47,vref46,vref45,vref44,vref43,vref42,vref41,vref40,vref39,vref38,vref37,vref36,vref35,vref34,vref33,vref32,vref31,vref30,vref29,vref28,vref27,vref26,vref25,vref24,vref23,vref22,vref21,vref20,vref19,vref18,vref17,vref16,vref15,vref14,vref13,vref12,vref11,vref10,vref9,vref8,vref7,vref6,vref5,vref4,vref3,vref2,vref1,vref0
+*.ipin VSS
+XR1[63] vref62 VDD VSS sky130_fd_pr__res_high_po W=1 L=1 mult=1 m=1
+XR1[62] vref61 vref62 VSS sky130_fd_pr__res_high_po W=1 L=1 mult=1 m=1
+XR1[61] vref60 vref61 VSS sky130_fd_pr__res_high_po W=1 L=1 mult=1 m=1
+XR1[60] vref59 vref60 VSS sky130_fd_pr__res_high_po W=1 L=1 mult=1 m=1
+XR1[59] vref58 vref59 VSS sky130_fd_pr__res_high_po W=1 L=1 mult=1 m=1
+XR1[58] vref57 vref58 VSS sky130_fd_pr__res_high_po W=1 L=1 mult=1 m=1
+XR1[57] vref56 vref57 VSS sky130_fd_pr__res_high_po W=1 L=1 mult=1 m=1
+XR1[56] vref55 vref56 VSS sky130_fd_pr__res_high_po W=1 L=1 mult=1 m=1
+XR1[55] vref54 vref55 VSS sky130_fd_pr__res_high_po W=1 L=1 mult=1 m=1
+XR1[54] vref53 vref54 VSS sky130_fd_pr__res_high_po W=1 L=1 mult=1 m=1
+XR1[53] vref52 vref53 VSS sky130_fd_pr__res_high_po W=1 L=1 mult=1 m=1
+XR1[52] vref51 vref52 VSS sky130_fd_pr__res_high_po W=1 L=1 mult=1 m=1
+XR1[51] vref50 vref51 VSS sky130_fd_pr__res_high_po W=1 L=1 mult=1 m=1
+XR1[50] vref49 vref50 VSS sky130_fd_pr__res_high_po W=1 L=1 mult=1 m=1
+XR1[49] vref48 vref49 VSS sky130_fd_pr__res_high_po W=1 L=1 mult=1 m=1
+XR1[48] vref47 vref48 VSS sky130_fd_pr__res_high_po W=1 L=1 mult=1 m=1
+XR1[47] vref46 vref47 VSS sky130_fd_pr__res_high_po W=1 L=1 mult=1 m=1
+XR1[46] vref45 vref46 VSS sky130_fd_pr__res_high_po W=1 L=1 mult=1 m=1
+XR1[45] vref44 vref45 VSS sky130_fd_pr__res_high_po W=1 L=1 mult=1 m=1
+XR1[44] vref43 vref44 VSS sky130_fd_pr__res_high_po W=1 L=1 mult=1 m=1
+XR1[43] vref42 vref43 VSS sky130_fd_pr__res_high_po W=1 L=1 mult=1 m=1
+XR1[42] vref41 vref42 VSS sky130_fd_pr__res_high_po W=1 L=1 mult=1 m=1
+XR1[41] vref40 vref41 VSS sky130_fd_pr__res_high_po W=1 L=1 mult=1 m=1
+XR1[40] vref39 vref40 VSS sky130_fd_pr__res_high_po W=1 L=1 mult=1 m=1
+XR1[39] vref38 vref39 VSS sky130_fd_pr__res_high_po W=1 L=1 mult=1 m=1
+XR1[38] vref37 vref38 VSS sky130_fd_pr__res_high_po W=1 L=1 mult=1 m=1
+XR1[37] vref36 vref37 VSS sky130_fd_pr__res_high_po W=1 L=1 mult=1 m=1
+XR1[36] vref35 vref36 VSS sky130_fd_pr__res_high_po W=1 L=1 mult=1 m=1
+XR1[35] vref34 vref35 VSS sky130_fd_pr__res_high_po W=1 L=1 mult=1 m=1
+XR1[34] vref33 vref34 VSS sky130_fd_pr__res_high_po W=1 L=1 mult=1 m=1
+XR1[33] vref32 vref33 VSS sky130_fd_pr__res_high_po W=1 L=1 mult=1 m=1
+XR1[32] vref31 vref32 VSS sky130_fd_pr__res_high_po W=1 L=1 mult=1 m=1
+XR1[31] vref30 vref31 VSS sky130_fd_pr__res_high_po W=1 L=1 mult=1 m=1
+XR1[30] vref29 vref30 VSS sky130_fd_pr__res_high_po W=1 L=1 mult=1 m=1
+XR1[29] vref28 vref29 VSS sky130_fd_pr__res_high_po W=1 L=1 mult=1 m=1
+XR1[28] vref27 vref28 VSS sky130_fd_pr__res_high_po W=1 L=1 mult=1 m=1
+XR1[27] vref26 vref27 VSS sky130_fd_pr__res_high_po W=1 L=1 mult=1 m=1
+XR1[26] vref25 vref26 VSS sky130_fd_pr__res_high_po W=1 L=1 mult=1 m=1
+XR1[25] vref24 vref25 VSS sky130_fd_pr__res_high_po W=1 L=1 mult=1 m=1
+XR1[24] vref23 vref24 VSS sky130_fd_pr__res_high_po W=1 L=1 mult=1 m=1
+XR1[23] vref22 vref23 VSS sky130_fd_pr__res_high_po W=1 L=1 mult=1 m=1
+XR1[22] vref21 vref22 VSS sky130_fd_pr__res_high_po W=1 L=1 mult=1 m=1
+XR1[21] vref20 vref21 VSS sky130_fd_pr__res_high_po W=1 L=1 mult=1 m=1
+XR1[20] vref19 vref20 VSS sky130_fd_pr__res_high_po W=1 L=1 mult=1 m=1
+XR1[19] vref18 vref19 VSS sky130_fd_pr__res_high_po W=1 L=1 mult=1 m=1
+XR1[18] vref17 vref18 VSS sky130_fd_pr__res_high_po W=1 L=1 mult=1 m=1
+XR1[17] vref16 vref17 VSS sky130_fd_pr__res_high_po W=1 L=1 mult=1 m=1
+XR1[16] vref15 vref16 VSS sky130_fd_pr__res_high_po W=1 L=1 mult=1 m=1
+XR1[15] vref14 vref15 VSS sky130_fd_pr__res_high_po W=1 L=1 mult=1 m=1
+XR1[14] vref13 vref14 VSS sky130_fd_pr__res_high_po W=1 L=1 mult=1 m=1
+XR1[13] vref12 vref13 VSS sky130_fd_pr__res_high_po W=1 L=1 mult=1 m=1
+XR1[12] vref11 vref12 VSS sky130_fd_pr__res_high_po W=1 L=1 mult=1 m=1
+XR1[11] vref10 vref11 VSS sky130_fd_pr__res_high_po W=1 L=1 mult=1 m=1
+XR1[10] vref9 vref10 VSS sky130_fd_pr__res_high_po W=1 L=1 mult=1 m=1
+XR1[9] vref8 vref9 VSS sky130_fd_pr__res_high_po W=1 L=1 mult=1 m=1
+XR1[8] vref7 vref8 VSS sky130_fd_pr__res_high_po W=1 L=1 mult=1 m=1
+XR1[7] vref6 vref7 VSS sky130_fd_pr__res_high_po W=1 L=1 mult=1 m=1
+XR1[6] vref5 vref6 VSS sky130_fd_pr__res_high_po W=1 L=1 mult=1 m=1
+XR1[5] vref4 vref5 VSS sky130_fd_pr__res_high_po W=1 L=1 mult=1 m=1
+XR1[4] vref3 vref4 VSS sky130_fd_pr__res_high_po W=1 L=1 mult=1 m=1
+XR1[3] vref2 vref3 VSS sky130_fd_pr__res_high_po W=1 L=1 mult=1 m=1
+XR1[2] vref1 vref2 VSS sky130_fd_pr__res_high_po W=1 L=1 mult=1 m=1
+XR1[1] vref0 vref1 VSS sky130_fd_pr__res_high_po W=1 L=1 mult=1 m=1
+XR1[0] VSS vref0 VSS sky130_fd_pr__res_high_po W=1 L=1 mult=1 m=1
+**.ends
+.end
