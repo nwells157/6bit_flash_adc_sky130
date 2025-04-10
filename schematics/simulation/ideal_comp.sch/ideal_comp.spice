@@ -1,0 +1,11 @@
+** sch_path: /home/nwells/xschem/6_bit_flash/schematics/ideal_comp.sch
+**.subckt ideal_comp vdd vss vinp vout vinn
+*.ipin vdd
+*.opin vout
+*.ipin vss
+*.ipin vinp
+*.ipin vinn
+E1 vcvs_out vss vinp vinn 1e6
+B1 vout vss v=( V(vcvs_out) < {vlow} ? {vlow} : (V(vcvs_out) > {vhigh} ? {vhigh} : V(vcvs_out)))
+**.ends
+.end

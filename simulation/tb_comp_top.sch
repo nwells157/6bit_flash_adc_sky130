@@ -29,21 +29,28 @@ sim_type=tran
 rawfile=$netlist_dir/tb_comp_top.raw
 autoload=1
 linewidth_mult=2}
-N 80 -300 80 -270 {lab=GND}
-N 80 -270 160 -270 {lab=GND}
-N 160 -300 160 -270 {lab=GND}
-N 80 -400 80 -360 {lab=VDD}
-N 160 -400 160 -360 {lab=VSS}
+N 80 -340 80 -310 {lab=GND}
+N 80 -310 160 -310 {lab=GND}
+N 160 -340 160 -310 {lab=GND}
+N 80 -440 80 -400 {lab=VDD}
+N 160 -440 160 -400 {lab=VSS}
 N 340 -120 340 -90 {lab=GND}
 N 340 -220 340 -180 {lab=VIN}
 N 640 -120 640 -90 {lab=GND}
 N 640 -220 640 -180 {lab=VREF}
 N 810 -490 840 -490 {lab=vout}
-N 700 -620 700 -590 {lab=VDD}
+N 700 -640 700 -610 {lab=VDD}
 N 550 -500 580 -500 {lab=VIN}
 N 550 -480 580 -480 {lab=VREF}
 N 700 -390 700 -360 {lab=VSS}
-C {code.sym} 60 -200 0 0 {name=sim_code only_toplevel=false value="
+N 700 -610 700 -590 {lab=VDD}
+C {devices/launcher.sym} 90 -40 0 0 {name=h17 
+descr="Load waves" 
+tclcommand="
+xschem raw_read $netlist_dir/[file tail [file rootname [xschem get current_name]]].raw tran
+"
+}
+C {devices/code.sym} 20 -200 0 0 {name=sim_code only_toplevel=false value="
 
 # Model files
 .lib /usr/local/share/pdk/sky130A/libs.tech/ngspice/sky130.lib.spice tt
@@ -88,25 +95,22 @@ write tb_comp_top.raw
 .endc
 
 "}
-C {vsource.sym} 80 -330 0 0 {name=V1 value=vdd savecurrent=false}
-C {vsource.sym} 160 -330 0 0 {name=V2 value=vss savecurrent=false}
-C {gnd.sym} 120 -270 0 0 {name=l1 lab=GND}
-C {lab_pin.sym} 80 -400 0 0 {name=p6 sig_type=std_logic lab=VDD}
-C {lab_pin.sym} 160 -400 0 0 {name=p7 sig_type=std_logic lab=VSS}
-C {vsource.sym} 340 -150 0 0 {name=V3 value="DC 0 AC 1 SIN(\{sin_offset\} \{sin_amp\} \{sin_freq\})"}
-C {gnd.sym} 340 -90 0 0 {name=l2 lab=GND}
-C {lab_pin.sym} 340 -220 0 0 {name=p11 sig_type=std_logic lab=VIN}
-C {lab_pin.sym} 700 -620 0 0 {name=p1 lab=VDD}
-C {lab_pin.sym} 700 -360 0 0 {name=p2 lab=VSS}
-C {lab_pin.sym} 550 -500 0 0 {name=p3 lab=VIN}
-C {lab_pin.sym} 840 -490 0 1 {name=p4 lab=vout}
-C {lab_pin.sym} 550 -480 0 0 {name=p5 lab=VREF}
-C {vsource.sym} 640 -150 0 0 {name=V4 value=vref}
-C {gnd.sym} 640 -90 0 0 {name=l3 lab=GND}
-C {lab_pin.sym} 640 -220 0 0 {name=p8 sig_type=std_logic lab=VREF}
-C {devices/launcher.sym} 90 -40 0 0 {name=h17 
-descr="Load waves" 
-tclcommand="
-xschem raw_read $netlist_dir/[file tail [file rootname [xschem get current_name]]].raw tran
-"
-}
+C {devices/gnd.sym} 110 -310 0 0 {name=l4 lab=GND}
+C {devices/vsource.sym} 80 -370 0 0 {name=V1 value=vdd savecurrent=false}
+C {devices/vsource.sym} 160 -370 0 0 {name=V2 value=vss savecurrent=false}
+C {devices/lab_pin.sym} 80 -440 0 0 {name=p9 sig_type=std_logic lab=VDD}
+C {devices/lab_pin.sym} 160 -440 0 0 {name=p7 sig_type=std_logic lab=VSS}
+C {devices/lab_pin.sym} 340 -220 0 0 {name=p11 sig_type=std_logic lab=VIN}
+C {devices/vsource.sym} 340 -150 0 0 {name=V3 value="DC 0 AC 1 SIN(\{sin_offset\} \{sin_amp\} \{sin_freq\})"}
+C {devices/gnd.sym} 340 -90 0 0 {name=l1 lab=GND}
+C {devices/gnd.sym} 640 -90 0 0 {name=l2 lab=GND}
+C {devices/vsource.sym} 640 -150 0 0 {name=V4 value=vref}
+C {devices/lab_pin.sym} 640 -220 0 0 {name=p8 sig_type=std_logic lab=VREF}
+C {devices/lab_pin.sym} 700 -360 0 0 {name=p2 lab=VSS}
+C {devices/lab_pin.sym} 840 -490 0 1 {name=p4 lab=vout}
+C {devices/lab_pin.sym} 550 -480 0 0 {name=p10 lab=VREF}
+C {devices/lab_pin.sym} 550 -500 0 0 {name=p3 lab=VIN}
+C {devices/lab_pin.sym} 700 40 2 0 {name=p1 lab=VDD}
+C {schematics/ideal_comp.sym} 700 -490 0 0 {name=xDUT}
+C {devices/lab_pin.sym} 700 -640 0 0 {name=p5 sig_type=std_logic lab=VDD}
+C {devices/noconn.sym} 840 -490 1 0 {name=l3}

@@ -1,0 +1,198 @@
+** sch_path: /home/nwells/xschem/6_bit_flash/schematics/adc_top.sch
+**.subckt adc_top
+*+ vref62,vref61,vref60,vref59,vref58,vref57,vref56,vref55,vref54,vref53,vref52,vref51,vref50,vref49,vref48,vref47,vref46,vref45,vref44,vref43,vref42,vref41,vref40,vref39,vref38,vref37,vref36,vref35,vref34,vref33,vref32,vref31,vref30,vref29,vref28,vref27,vref26,vref25,vref24,vref23,vref22,vref21,vref20,vref19,vref18,vref17,vref16,vref15,vref14,vref13,vref12,vref11,vref10,vref9,vref8,vref7,vref6,vref5,vref4,vref3,vref2,vref1,vref0 OUT[5],OUT[4],OUT[3],OUT[2],OUT[1],OUT[0] VDD VSS VIN VREF
+*.ipin VDD
+*.ipin VSS
+*.ipin VIN
+*.ipin VREF
+*.opin OUT[5],OUT[4],OUT[3],OUT[2],OUT[1],OUT[0]
+*.iopin
+*+ vref62,vref61,vref60,vref59,vref58,vref57,vref56,vref55,vref54,vref53,vref52,vref51,vref50,vref49,vref48,vref47,vref46,vref45,vref44,vref43,vref42,vref41,vref40,vref39,vref38,vref37,vref36,vref35,vref34,vref33,vref32,vref31,vref30,vref29,vref28,vref27,vref26,vref25,vref24,vref23,vref22,vref21,vref20,vref19,vref18,vref17,vref16,vref15,vref14,vref13,vref12,vref11,vref10,vref9,vref8,vref7,vref6,vref5,vref4,vref3,vref2,vref1,vref0
+x1 VDD vref62 vref61 vref60 vref59 vref58 vref57 vref56 vref55 vref54 vref53 vref52 vref51 vref50 vref49 vref48 vref47 vref46
++ vref45 vref44 vref43 vref42 vref41 vref40 vref39 vref38 vref37 vref36 vref35 vref34 vref33 vref32 vref31 vref30 vref29 vref28 vref27
++ vref26 vref25 vref24 vref23 vref22 vref21 vref20 vref19 vref18 vref17 vref16 vref15 vref14 vref13 vref12 vref11 vref10 vref9 vref8 vref7
++ vref6 vref5 vref4 vref3 vref2 vref1 vref0 VSS ref_ladder_top
+x2 vout62 vout61 vout60 vout59 vout58 vout57 vout56 vout55 vout54 vout53 vout52 vout51 vout50 vout49 vout48 vout47 vout46 vout45
++ vout44 vout43 vout42 vout41 vout40 vout39 vout38 vout37 vout36 vout35 vout34 vout33 vout32 vout31 vout30 vout29 vout28 vout27 vout26
++ vout25 vout24 vout23 vout22 vout21 vout20 vout19 vout18 vout17 vout16 vout15 vout14 vout13 vout12 vout11 vout10 vout9 vout8 vout7 vout6
++ vout5 vout4 vout3 vout2 vout1 vout0 VDD VSS vref62 vref61 vref60 vref59 vref58 vref57 vref56 vref55 vref54 vref53 vref52 vref51 vref50
++ vref49 vref48 vref47 vref46 vref45 vref44 vref43 vref42 vref41 vref40 vref39 vref38 vref37 vref36 vref35 vref34 vref33 vref32 vref31
++ vref30 vref29 vref28 vref27 vref26 vref25 vref24 vref23 vref22 vref21 vref20 vref19 vref18 vref17 vref16 vref15 vref14 vref13 vref12
++ vref11 vref10 vref9 vref8 vref7 vref6 vref5 vref4 vref3 vref2 vref1 vref0 VIN comp_top_ideal
+**.ends
+
+* expanding   symbol:  schematics/ref_ladder_top.sym # of pins=3
+** sym_path: /home/nwells/xschem/6_bit_flash/schematics/ref_ladder_top.sym
+** sch_path: /home/nwells/xschem/6_bit_flash/schematics/ref_ladder_top.sch
+.subckt ref_ladder_top VDD vref62 vref61 vref60 vref59 vref58 vref57 vref56 vref55 vref54 vref53 vref52 vref51 vref50 vref49
++ vref48 vref47 vref46 vref45 vref44 vref43 vref42 vref41 vref40 vref39 vref38 vref37 vref36 vref35 vref34 vref33 vref32 vref31 vref30
++ vref29 vref28 vref27 vref26 vref25 vref24 vref23 vref22 vref21 vref20 vref19 vref18 vref17 vref16 vref15 vref14 vref13 vref12 vref11
++ vref10 vref9 vref8 vref7 vref6 vref5 vref4 vref3 vref2 vref1 vref0 VSS
+*.ipin VDD
+*.opin
+*+ vref62,vref61,vref60,vref59,vref58,vref57,vref56,vref55,vref54,vref53,vref52,vref51,vref50,vref49,vref48,vref47,vref46,vref45,vref44,vref43,vref42,vref41,vref40,vref39,vref38,vref37,vref36,vref35,vref34,vref33,vref32,vref31,vref30,vref29,vref28,vref27,vref26,vref25,vref24,vref23,vref22,vref21,vref20,vref19,vref18,vref17,vref16,vref15,vref14,vref13,vref12,vref11,vref10,vref9,vref8,vref7,vref6,vref5,vref4,vref3,vref2,vref1,vref0
+*.ipin VSS
+XR1[63] vref62 VDD VSS sky130_fd_pr__res_high_po W=1 L=1 mult=1 m=1
+XR1[62] vref61 vref62 VSS sky130_fd_pr__res_high_po W=1 L=1 mult=1 m=1
+XR1[61] vref60 vref61 VSS sky130_fd_pr__res_high_po W=1 L=1 mult=1 m=1
+XR1[60] vref59 vref60 VSS sky130_fd_pr__res_high_po W=1 L=1 mult=1 m=1
+XR1[59] vref58 vref59 VSS sky130_fd_pr__res_high_po W=1 L=1 mult=1 m=1
+XR1[58] vref57 vref58 VSS sky130_fd_pr__res_high_po W=1 L=1 mult=1 m=1
+XR1[57] vref56 vref57 VSS sky130_fd_pr__res_high_po W=1 L=1 mult=1 m=1
+XR1[56] vref55 vref56 VSS sky130_fd_pr__res_high_po W=1 L=1 mult=1 m=1
+XR1[55] vref54 vref55 VSS sky130_fd_pr__res_high_po W=1 L=1 mult=1 m=1
+XR1[54] vref53 vref54 VSS sky130_fd_pr__res_high_po W=1 L=1 mult=1 m=1
+XR1[53] vref52 vref53 VSS sky130_fd_pr__res_high_po W=1 L=1 mult=1 m=1
+XR1[52] vref51 vref52 VSS sky130_fd_pr__res_high_po W=1 L=1 mult=1 m=1
+XR1[51] vref50 vref51 VSS sky130_fd_pr__res_high_po W=1 L=1 mult=1 m=1
+XR1[50] vref49 vref50 VSS sky130_fd_pr__res_high_po W=1 L=1 mult=1 m=1
+XR1[49] vref48 vref49 VSS sky130_fd_pr__res_high_po W=1 L=1 mult=1 m=1
+XR1[48] vref47 vref48 VSS sky130_fd_pr__res_high_po W=1 L=1 mult=1 m=1
+XR1[47] vref46 vref47 VSS sky130_fd_pr__res_high_po W=1 L=1 mult=1 m=1
+XR1[46] vref45 vref46 VSS sky130_fd_pr__res_high_po W=1 L=1 mult=1 m=1
+XR1[45] vref44 vref45 VSS sky130_fd_pr__res_high_po W=1 L=1 mult=1 m=1
+XR1[44] vref43 vref44 VSS sky130_fd_pr__res_high_po W=1 L=1 mult=1 m=1
+XR1[43] vref42 vref43 VSS sky130_fd_pr__res_high_po W=1 L=1 mult=1 m=1
+XR1[42] vref41 vref42 VSS sky130_fd_pr__res_high_po W=1 L=1 mult=1 m=1
+XR1[41] vref40 vref41 VSS sky130_fd_pr__res_high_po W=1 L=1 mult=1 m=1
+XR1[40] vref39 vref40 VSS sky130_fd_pr__res_high_po W=1 L=1 mult=1 m=1
+XR1[39] vref38 vref39 VSS sky130_fd_pr__res_high_po W=1 L=1 mult=1 m=1
+XR1[38] vref37 vref38 VSS sky130_fd_pr__res_high_po W=1 L=1 mult=1 m=1
+XR1[37] vref36 vref37 VSS sky130_fd_pr__res_high_po W=1 L=1 mult=1 m=1
+XR1[36] vref35 vref36 VSS sky130_fd_pr__res_high_po W=1 L=1 mult=1 m=1
+XR1[35] vref34 vref35 VSS sky130_fd_pr__res_high_po W=1 L=1 mult=1 m=1
+XR1[34] vref33 vref34 VSS sky130_fd_pr__res_high_po W=1 L=1 mult=1 m=1
+XR1[33] vref32 vref33 VSS sky130_fd_pr__res_high_po W=1 L=1 mult=1 m=1
+XR1[32] vref31 vref32 VSS sky130_fd_pr__res_high_po W=1 L=1 mult=1 m=1
+XR1[31] vref30 vref31 VSS sky130_fd_pr__res_high_po W=1 L=1 mult=1 m=1
+XR1[30] vref29 vref30 VSS sky130_fd_pr__res_high_po W=1 L=1 mult=1 m=1
+XR1[29] vref28 vref29 VSS sky130_fd_pr__res_high_po W=1 L=1 mult=1 m=1
+XR1[28] vref27 vref28 VSS sky130_fd_pr__res_high_po W=1 L=1 mult=1 m=1
+XR1[27] vref26 vref27 VSS sky130_fd_pr__res_high_po W=1 L=1 mult=1 m=1
+XR1[26] vref25 vref26 VSS sky130_fd_pr__res_high_po W=1 L=1 mult=1 m=1
+XR1[25] vref24 vref25 VSS sky130_fd_pr__res_high_po W=1 L=1 mult=1 m=1
+XR1[24] vref23 vref24 VSS sky130_fd_pr__res_high_po W=1 L=1 mult=1 m=1
+XR1[23] vref22 vref23 VSS sky130_fd_pr__res_high_po W=1 L=1 mult=1 m=1
+XR1[22] vref21 vref22 VSS sky130_fd_pr__res_high_po W=1 L=1 mult=1 m=1
+XR1[21] vref20 vref21 VSS sky130_fd_pr__res_high_po W=1 L=1 mult=1 m=1
+XR1[20] vref19 vref20 VSS sky130_fd_pr__res_high_po W=1 L=1 mult=1 m=1
+XR1[19] vref18 vref19 VSS sky130_fd_pr__res_high_po W=1 L=1 mult=1 m=1
+XR1[18] vref17 vref18 VSS sky130_fd_pr__res_high_po W=1 L=1 mult=1 m=1
+XR1[17] vref16 vref17 VSS sky130_fd_pr__res_high_po W=1 L=1 mult=1 m=1
+XR1[16] vref15 vref16 VSS sky130_fd_pr__res_high_po W=1 L=1 mult=1 m=1
+XR1[15] vref14 vref15 VSS sky130_fd_pr__res_high_po W=1 L=1 mult=1 m=1
+XR1[14] vref13 vref14 VSS sky130_fd_pr__res_high_po W=1 L=1 mult=1 m=1
+XR1[13] vref12 vref13 VSS sky130_fd_pr__res_high_po W=1 L=1 mult=1 m=1
+XR1[12] vref11 vref12 VSS sky130_fd_pr__res_high_po W=1 L=1 mult=1 m=1
+XR1[11] vref10 vref11 VSS sky130_fd_pr__res_high_po W=1 L=1 mult=1 m=1
+XR1[10] vref9 vref10 VSS sky130_fd_pr__res_high_po W=1 L=1 mult=1 m=1
+XR1[9] vref8 vref9 VSS sky130_fd_pr__res_high_po W=1 L=1 mult=1 m=1
+XR1[8] vref7 vref8 VSS sky130_fd_pr__res_high_po W=1 L=1 mult=1 m=1
+XR1[7] vref6 vref7 VSS sky130_fd_pr__res_high_po W=1 L=1 mult=1 m=1
+XR1[6] vref5 vref6 VSS sky130_fd_pr__res_high_po W=1 L=1 mult=1 m=1
+XR1[5] vref4 vref5 VSS sky130_fd_pr__res_high_po W=1 L=1 mult=1 m=1
+XR1[4] vref3 vref4 VSS sky130_fd_pr__res_high_po W=1 L=1 mult=1 m=1
+XR1[3] vref2 vref3 VSS sky130_fd_pr__res_high_po W=1 L=1 mult=1 m=1
+XR1[2] vref1 vref2 VSS sky130_fd_pr__res_high_po W=1 L=1 mult=1 m=1
+XR1[1] vref0 vref1 VSS sky130_fd_pr__res_high_po W=1 L=1 mult=1 m=1
+XR1[0] VSS vref0 VSS sky130_fd_pr__res_high_po W=1 L=1 mult=1 m=1
+.ends
+
+
+* expanding   symbol:  schematics/comp_top_ideal.sym # of pins=5
+** sym_path: /home/nwells/xschem/6_bit_flash/schematics/comp_top_ideal.sym
+** sch_path: /home/nwells/xschem/6_bit_flash/schematics/comp_top_ideal.sch
+.subckt comp_top_ideal vout62 vout61 vout60 vout59 vout58 vout57 vout56 vout55 vout54 vout53 vout52 vout51 vout50 vout49 vout48
++ vout47 vout46 vout45 vout44 vout43 vout42 vout41 vout40 vout39 vout38 vout37 vout36 vout35 vout34 vout33 vout32 vout31 vout30 vout29
++ vout28 vout27 vout26 vout25 vout24 vout23 vout22 vout21 vout20 vout19 vout18 vout17 vout16 vout15 vout14 vout13 vout12 vout11 vout10
++ vout9 vout8 vout7 vout6 vout5 vout4 vout3 vout2 vout1 vout0 VDD VSS vref62 vref61 vref60 vref59 vref58 vref57 vref56 vref55 vref54
++ vref53 vref52 vref51 vref50 vref49 vref48 vref47 vref46 vref45 vref44 vref43 vref42 vref41 vref40 vref39 vref38 vref37 vref36 vref35
++ vref34 vref33 vref32 vref31 vref30 vref29 vref28 vref27 vref26 vref25 vref24 vref23 vref22 vref21 vref20 vref19 vref18 vref17 vref16
++ vref15 vref14 vref13 vref12 vref11 vref10 vref9 vref8 vref7 vref6 vref5 vref4 vref3 vref2 vref1 vref0 VIN
+*.opin
+*+ vout62,vout61,vout60,vout59,vout58,vout57,vout56,vout55,vout54,vout53,vout52,vout51,vout50,vout49,vout48,vout47,vout46,vout45,vout44,vout43,vout42,vout41,vout40,vout39,vout38,vout37,vout36,vout35,vout34,vout33,vout32,vout31,vout30,vout29,vout28,vout27,vout26,vout25,vout24,vout23,vout22,vout21,vout20,vout19,vout18,vout17,vout16,vout15,vout14,vout13,vout12,vout11,vout10,vout9,vout8,vout7,vout6,vout5,vout4,vout3,vout2,vout1,vout0
+*.ipin VDD
+*.ipin VSS
+*.ipin
+*+ vref62,vref61,vref60,vref59,vref58,vref57,vref56,vref55,vref54,vref53,vref52,vref51,vref50,vref49,vref48,vref47,vref46,vref45,vref44,vref43,vref42,vref41,vref40,vref39,vref38,vref37,vref36,vref35,vref34,vref33,vref32,vref31,vref30,vref29,vref28,vref27,vref26,vref25,vref24,vref23,vref22,vref21,vref20,vref19,vref18,vref17,vref16,vref15,vref14,vref13,vref12,vref11,vref10,vref9,vref8,vref7,vref6,vref5,vref4,vref3,vref2,vref1,vref0
+*.ipin VIN
+xCOMP62 VDD VSS VIN vout62 vref62 ideal_comp
+xCOMP61 VDD VSS VIN vout61 vref61 ideal_comp
+xCOMP60 VDD VSS VIN vout60 vref60 ideal_comp
+xCOMP59 VDD VSS VIN vout59 vref59 ideal_comp
+xCOMP58 VDD VSS VIN vout58 vref58 ideal_comp
+xCOMP57 VDD VSS VIN vout57 vref57 ideal_comp
+xCOMP56 VDD VSS VIN vout56 vref56 ideal_comp
+xCOMP55 VDD VSS VIN vout55 vref55 ideal_comp
+xCOMP54 VDD VSS VIN vout54 vref54 ideal_comp
+xCOMP53 VDD VSS VIN vout53 vref53 ideal_comp
+xCOMP52 VDD VSS VIN vout52 vref52 ideal_comp
+xCOMP51 VDD VSS VIN vout51 vref51 ideal_comp
+xCOMP50 VDD VSS VIN vout50 vref50 ideal_comp
+xCOMP49 VDD VSS VIN vout49 vref49 ideal_comp
+xCOMP48 VDD VSS VIN vout48 vref48 ideal_comp
+xCOMP47 VDD VSS VIN vout47 vref47 ideal_comp
+xCOMP46 VDD VSS VIN vout46 vref46 ideal_comp
+xCOMP45 VDD VSS VIN vout45 vref45 ideal_comp
+xCOMP44 VDD VSS VIN vout44 vref44 ideal_comp
+xCOMP43 VDD VSS VIN vout43 vref43 ideal_comp
+xCOMP42 VDD VSS VIN vout42 vref42 ideal_comp
+xCOMP41 VDD VSS VIN vout41 vref41 ideal_comp
+xCOMP40 VDD VSS VIN vout40 vref40 ideal_comp
+xCOMP39 VDD VSS VIN vout39 vref39 ideal_comp
+xCOMP38 VDD VSS VIN vout38 vref38 ideal_comp
+xCOMP37 VDD VSS VIN vout37 vref37 ideal_comp
+xCOMP36 VDD VSS VIN vout36 vref36 ideal_comp
+xCOMP35 VDD VSS VIN vout35 vref35 ideal_comp
+xCOMP34 VDD VSS VIN vout34 vref34 ideal_comp
+xCOMP33 VDD VSS VIN vout33 vref33 ideal_comp
+xCOMP32 VDD VSS VIN vout32 vref32 ideal_comp
+xCOMP31 VDD VSS VIN vout31 vref31 ideal_comp
+xCOMP30 VDD VSS VIN vout30 vref30 ideal_comp
+xCOMP29 VDD VSS VIN vout29 vref29 ideal_comp
+xCOMP28 VDD VSS VIN vout28 vref28 ideal_comp
+xCOMP27 VDD VSS VIN vout27 vref27 ideal_comp
+xCOMP26 VDD VSS VIN vout26 vref26 ideal_comp
+xCOMP25 VDD VSS VIN vout25 vref25 ideal_comp
+xCOMP24 VDD VSS VIN vout24 vref24 ideal_comp
+xCOMP23 VDD VSS VIN vout23 vref23 ideal_comp
+xCOMP22 VDD VSS VIN vout22 vref22 ideal_comp
+xCOMP21 VDD VSS VIN vout21 vref21 ideal_comp
+xCOMP20 VDD VSS VIN vout20 vref20 ideal_comp
+xCOMP19 VDD VSS VIN vout19 vref19 ideal_comp
+xCOMP18 VDD VSS VIN vout18 vref18 ideal_comp
+xCOMP17 VDD VSS VIN vout17 vref17 ideal_comp
+xCOMP16 VDD VSS VIN vout16 vref16 ideal_comp
+xCOMP15 VDD VSS VIN vout15 vref15 ideal_comp
+xCOMP14 VDD VSS VIN vout14 vref14 ideal_comp
+xCOMP13 VDD VSS VIN vout13 vref13 ideal_comp
+xCOMP12 VDD VSS VIN vout12 vref12 ideal_comp
+xCOMP11 VDD VSS VIN vout11 vref11 ideal_comp
+xCOMP10 VDD VSS VIN vout10 vref10 ideal_comp
+xCOMP9 VDD VSS VIN vout9 vref9 ideal_comp
+xCOMP8 VDD VSS VIN vout8 vref8 ideal_comp
+xCOMP7 VDD VSS VIN vout7 vref7 ideal_comp
+xCOMP6 VDD VSS VIN vout6 vref6 ideal_comp
+xCOMP5 VDD VSS VIN vout5 vref5 ideal_comp
+xCOMP4 VDD VSS VIN vout4 vref4 ideal_comp
+xCOMP3 VDD VSS VIN vout3 vref3 ideal_comp
+xCOMP2 VDD VSS VIN vout2 vref2 ideal_comp
+xCOMP1 VDD VSS VIN vout1 vref1 ideal_comp
+xCOMP0 VDD VSS VIN vout0 vref0 ideal_comp
+.ends
+
+
+* expanding   symbol:  schematics/ideal_comp.sym # of pins=5
+** sym_path: /home/nwells/xschem/6_bit_flash/schematics/ideal_comp.sym
+** sch_path: /home/nwells/xschem/6_bit_flash/schematics/ideal_comp.sch
+.subckt ideal_comp vdd vss vinp vout vinn
+*.ipin vdd
+*.opin vout
+*.ipin vss
+*.ipin vinp
+*.ipin vinn
+E1 vcvs_out vss vinp vinn 1e6
+B1 vout vss v=( V(vcvs_out) < {vlow} ? {vlow} : (V(vcvs_out) > {vhigh} ? {vhigh} : V(vcvs_out)))
+.ends
+
+.end

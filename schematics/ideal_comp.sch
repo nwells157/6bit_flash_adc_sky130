@@ -10,7 +10,7 @@ N 200 -190 230 -190 {lab=vinn}
 N 200 -230 230 -230 {lab=vinp}
 N 270 -280 270 -240 {lab=vcvs_out}
 N 420 -270 420 -240 {lab=vss}
-N 420 -370 420 -330 {lab=vss}
+N 420 -370 420 -330 {lab=vout}
 C {devices/ipin.sym} 70 -90 0 0 {name=p12 lab=vdd}
 C {devices/opin.sym} 100 -90 0 0 {name=p13 lab=vout}
 C {devices/ipin.sym} 70 -70 0 0 {name=p8 lab=vss}
