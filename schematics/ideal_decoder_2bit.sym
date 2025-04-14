@@ -1,0 +1,53 @@
+v {xschem version=3.4.6 file_version=1.2}
+G {}
+K {type=decoder_2bit_va
+format="@name @@vdd @@vss @@vref @@in0 @@in1 @@in2 @@in3 @@out0 @@out1 @model"
+template="name=x1 model=decoder_2bit_cell"
+
+device_model="tcleval(
+.subckt decoder_2bit_cell vdd vss vref in0 in1 in2 in3 out0 out1
+N1 vdd vss vref in0 in1 in2 in3 out0 out1 decoder_2bit_model
+.ends decoder_2bit_cell
+
+.model decoder_2bit_model encoder_2bit
+
+
+.control
+* following line specifies the location for the .osdi file so ngspice can use it.
+* working dir set in tcl in startup script as pwd in top location
+pre_osdi $working_dir/schematics/verilog_a/ideal_decoder_2bit.osdi
+.endc
+)"}
+V {}
+S {}
+E {}
+L 4 130 -60 150 -60 {}
+L 4 -150 -60 -130 -60 {}
+L 4 -150 -40 -130 -40 {}
+L 4 130 -40 150 -40 {}
+L 4 -150 -20 -130 -20 {}
+L 4 -150 0 -130 0 {}
+L 4 -150 20 -130 20 {}
+L 4 -150 40 -130 40 {}
+L 4 -150 60 -130 60 {}
+B 5 147.5 -62.5 152.5 -57.5 {name=out0 dir=out}
+B 5 -152.5 -62.5 -147.5 -57.5 {name=vdd dir=in}
+B 5 -152.5 -42.5 -147.5 -37.5 {name=vss dir=in}
+B 5 147.5 -42.5 152.5 -37.5 {name=out1 dir=out}
+B 5 -152.5 -22.5 -147.5 -17.5 {name=vref dir=in}
+B 5 -152.5 -2.5 -147.5 2.5 {name=in0 dir=in}
+B 5 -152.5 17.5 -147.5 22.5 {name=in1 dir=in}
+B 5 -152.5 37.5 -147.5 42.5 {name=in2 dir=in}
+B 5 -152.5 57.5 -147.5 62.5 {name=in3 dir=in}
+P 4 5 130 -70 -130 -70 -130 70 130 70 130 -70 {}
+T {@symname} -99 -6 0 0 0.3 0.3 {}
+T {@name} 135 -82 0 0 0.2 0.2 {}
+T {out0} 125 -64 0 1 0.2 0.2 {}
+T {vdd} -125 -64 0 0 0.2 0.2 {}
+T {vss} -125 -44 0 0 0.2 0.2 {}
+T {out1} 125 -44 0 1 0.2 0.2 {}
+T {vref} -125 -24 0 0 0.2 0.2 {}
+T {in0} -125 -4 0 0 0.2 0.2 {}
+T {in1} -125 16 0 0 0.2 0.2 {}
+T {in2} -125 36 0 0 0.2 0.2 {}
+T {in3} -125 56 0 0 0.2 0.2 {}

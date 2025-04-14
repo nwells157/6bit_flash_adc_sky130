@@ -12,18 +12,15 @@ ypos2=2
 divy=5
 subdivy=4
 unity=1
-x1=0
-x2=3e-05
+x1=0.00012297167
+x2=0.0002634726
 divx=5
-subdivx=1
+subdivx=4
 xlabmag=1.0
 ylabmag=1.0
 node="vin
-vref10
-vout10
-vout45
-vref45"
-color="4 7 6 9 8"
+ideal_out"
+color="4 7"
 dataset=-1
 unitx=1
 logx=0
@@ -46,7 +43,7 @@ C {devices/vsource.sym} 80 -350 0 0 {name=V1 value=vdd savecurrent=false}
 C {devices/vsource.sym} 160 -350 0 0 {name=V2 value=vss savecurrent=false}
 C {devices/lab_pin.sym} 80 -420 0 0 {name=p9 sig_type=std_logic lab=VDD}
 C {devices/lab_pin.sym} 160 -420 0 0 {name=p7 sig_type=std_logic lab=VSS}
-C {devices/code.sym} 70 -190 0 0 {name=sim_code only_toplevel=false value="
+C {devices/code.sym} 80 -190 0 0 {name=sim_code only_toplevel=false value="
 
 # Model files
 .lib /usr/local/share/pdk/sky130A/libs.tech/ngspice/sky130.lib.spice tt
@@ -55,9 +52,9 @@ C {devices/code.sym} 70 -190 0 0 {name=sim_code only_toplevel=false value="
 # Global parameters #
 #####################
 
-.param vdd=1.8 vss=0 vref=vdd
-.param sin_offset=vref/2 sin_amp=vref/2 sin_freq=100k sin_period= 1/sin_freq
-.param tran_step=sin_period/100 tran_stop_time=sin_period*3
+.param vdd=1.8 vss=0 vref=vdd/2
+.param sin_offset=vdd/2 sin_amp=vdd/2 sin_freq=10k sin_period= 1/sin_freq
+.param tran_step=sin_period/1e3 tran_stop_time=sin_period*3
 
 #####################
 # Device parameters #
@@ -84,7 +81,7 @@ run
 
 # Write to files
 write tb_adc_top.raw
-wrdata vin.txt VIN vref10 vout10
+wrdata ideal.txt vin ideal_out
 
 .endc
 
@@ -99,6 +96,23 @@ C {devices/gnd.sym} 410 -60 0 0 {name=l1 lab=GND}
 C {devices/gnd.sym} 300 -60 0 0 {name=l2 lab=GND}
 C {devices/vsource.sym} 300 -120 0 0 {name=V4 value=vref}
 C {devices/lab_pin.sym} 300 -190 0 0 {name=p8 sig_type=std_logic lab=VREF}
-C {devices/lab_pin.sym} 1030 -420 0 1 {name=p1 lab=OUT[5:0]}
 C {devices/lab_pin.sym} 1030 -400 0 1 {name=p6 lab=vref[62..0]}
-C {devices/lab_pin.sym} 1030 -380 0 1 {name=p10 lab=vout[62..0]}
+C {devices/lab_pin.sym} 1030 -380 0 1 {name=p10 lab=comp_out[62..0]}
+C {devices/lab_pin.sym} 1030 -420 0 1 {name=p1 lab=OUT[5..0]}
+C {devices/lab_pin.sym} 1660 -370 0 1 {name=p12 lab=ideal_out}
+C {devices/lab_pin.sym} 1360 -370 0 0 {name=p13 lab=VDD}
+C {devices/lab_pin.sym} 1360 -350 0 0 {name=p14 lab=VSS}
+C {devices/lab_pin.sym} 1360 -330 0 0 {name=p15 lab=VREF}
+C {devices/lab_pin.sym} 1360 -310 0 0 {name=p16 lab=OUT0}
+C {devices/lab_pin.sym} 1360 -290 0 0 {name=p17 lab=OUT1}
+C {devices/lab_pin.sym} 1360 -270 0 0 {name=p18 lab=OUT2}
+C {devices/lab_pin.sym} 1360 -250 0 0 {name=p19 lab=OUT3}
+C {devices/lab_pin.sym} 1360 -230 0 0 {name=p20 lab=OUT4}
+C {devices/lab_pin.sym} 1360 -210 0 0 {name=p21 lab=OUT5}
+C {schematics/ideal_dac.sym} 1510 -290 0 0 {name=xDAC_CHECK model=ideal_dac_cell}
+C {schematics/ideal_comp_veriloga.sym} 1500 -660 0 0 {name=xVERILOGA_TEST_COMP}
+C {devices/lab_pin.sym} 1350 -690 0 0 {name=p22 lab=VDD}
+C {devices/lab_pin.sym} 1350 -670 0 0 {name=p23 lab=VSS}
+C {devices/lab_pin.sym} 1350 -650 0 0 {name=p24 sig_type=std_logic lab=VIN}
+C {devices/lab_pin.sym} 1350 -630 0 0 {name=p25 lab=VREF}
+C {devices/lab_pin.sym} 1650 -690 0 1 {name=p26 lab=veriloga_comp_out}

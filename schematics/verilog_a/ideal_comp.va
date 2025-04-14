@@ -1,0 +1,22 @@
+`include "constants.vams"
+`include "disciplines.vams"
+
+module ideal_comp(vdd, vss, inp, inn, vout);
+
+    input inp, inn, vdd, vss;
+    electrical  inp, inn, vdd, vss;
+
+    output vout;
+    electrical vout;
+
+    parameter integer crash_fix = 0;
+    parameter real gain = 10;
+    integer code;
+    real value;
+
+
+    analog begin
+        value = V(inp) - V(inn);
+        V(vout) <+ value * gain;
+    end
+endmodule

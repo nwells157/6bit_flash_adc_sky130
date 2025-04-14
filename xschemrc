@@ -358,3 +358,24 @@ set intuitive_interface 1
 
 # Separate netlist into folders by name, should make simulation easier
 set local_netlist_dir 2
+
+# Set top directory
+set working_dir [pwd]
+
+type=opamp_va
+format="@name @pinlist @model"
+template="name=x1 model=ideal_dac_cell"
+
+device_model="tcleval(
+.subckt ideal_dac_cell IN0 IN1 IN2 IN3 IN4 IN5 OUT VDD VREF VSS 
+xIDEAL_DAC in0 in1 in2 in3 in4 in5 out vdd vref vss ideal_dac_model
+.ends ideal_dac_cell
+
+.model ideal_dac_model ideal_dac
+
+
+.control
+* following line specifies the location for the .osdi file so ngspice can use it.
+pre_osdi $working_dir/schematics/verilog_a/ideal_dac.osdi
+.endc
+)"

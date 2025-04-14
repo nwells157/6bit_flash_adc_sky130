@@ -1,0 +1,38 @@
+`include "constants.vams"
+`include "disciplines.vams"
+
+module encoder_2bit(vdd, vss, vref, in0, in1, in2, in3, out0, out1);
+
+    input vdd, vss, vref, in0, in1, in2, in3;
+    electrical vdd, vss, vref, in0, in1, in2, in3;
+
+    output out0, out1;
+    electrical out0, out1;
+
+    parameter integer crash_fix = 0;
+    integer code;
+    real value;
+    real vout0_value;
+    real vout1_value;
+
+    analog begin
+        // Initialize outputs to 0
+        if (V(in0) < V(vdd)/2 && V(in1) < V(vdd)/2 && V(in2) < V(vdd)/2) begin
+            vout0_value = 0;
+            vout1_value = 0;
+        end else if (V(in0) > V(vdd)/2 && V(in1) < V(vdd)/2 && V(in2) < V(vdd)/2) begin
+            vout0_value = 1;
+            vout1_value = 0;
+        end else if (V(in0) > V(vdd)/2 && V(in1) > V(vdd)/2 && V(in2) < V(vdd)/2) begin
+            vout0_value = 0;
+            vout1_value = 1;
+        end else if (V(in0) > V(vdd)/2 && V(in1) > V(vdd)/2 && V(in2) > V(vdd)/2) begin
+            vout0_value = 1;
+            vout1_value = 1;
+        end
+
+        V(out0) <+ vout0_value;
+        V(out1) <+ vout1_value;
+
+    end
+endmodule

@@ -1,24 +1,35 @@
 ** sch_path: /home/nwells/xschem/6_bit_flash/schematics/adc_top.sch
-**.subckt adc_top
-*+ vref62,vref61,vref60,vref59,vref58,vref57,vref56,vref55,vref54,vref53,vref52,vref51,vref50,vref49,vref48,vref47,vref46,vref45,vref44,vref43,vref42,vref41,vref40,vref39,vref38,vref37,vref36,vref35,vref34,vref33,vref32,vref31,vref30,vref29,vref28,vref27,vref26,vref25,vref24,vref23,vref22,vref21,vref20,vref19,vref18,vref17,vref16,vref15,vref14,vref13,vref12,vref11,vref10,vref9,vref8,vref7,vref6,vref5,vref4,vref3,vref2,vref1,vref0 OUT[5],OUT[4],OUT[3],OUT[2],OUT[1],OUT[0] VDD VSS VIN VREF
+**.subckt adc_top OUT5,OUT4,OUT3,OUT2,OUT1,OUT0 VDD
+*+ vref62,vref61,vref60,vref59,vref58,vref57,vref56,vref55,vref54,vref53,vref52,vref51,vref50,vref49,vref48,vref47,vref46,vref45,vref44,vref43,vref42,vref41,vref40,vref39,vref38,vref37,vref36,vref35,vref34,vref33,vref32,vref31,vref30,vref29,vref28,vref27,vref26,vref25,vref24,vref23,vref22,vref21,vref20,vref19,vref18,vref17,vref16,vref15,vref14,vref13,vref12,vref11,vref10,vref9,vref8,vref7,vref6,vref5,vref4,vref3,vref2,vref1,vref0 VSS
+*+ comp_out62,comp_out61,comp_out60,comp_out59,comp_out58,comp_out57,comp_out56,comp_out55,comp_out54,comp_out53,comp_out52,comp_out51,comp_out50,comp_out49,comp_out48,comp_out47,comp_out46,comp_out45,comp_out44,comp_out43,comp_out42,comp_out41,comp_out40,comp_out39,comp_out38,comp_out37,comp_out36,comp_out35,comp_out34,comp_out33,comp_out32,comp_out31,comp_out30,comp_out29,comp_out28,comp_out27,comp_out26,comp_out25,comp_out24,comp_out23,comp_out22,comp_out21,comp_out20,comp_out19,comp_out18,comp_out17,comp_out16,comp_out15,comp_out14,comp_out13,comp_out12,comp_out11,comp_out10,comp_out9,comp_out8,comp_out7,comp_out6,comp_out5,comp_out4,comp_out3,comp_out2,comp_out1,comp_out0 VIN VREF
 *.ipin VDD
 *.ipin VSS
 *.ipin VIN
 *.ipin VREF
-*.opin OUT[5],OUT[4],OUT[3],OUT[2],OUT[1],OUT[0]
+*.opin OUT5,OUT4,OUT3,OUT2,OUT1,OUT0
 *.iopin
 *+ vref62,vref61,vref60,vref59,vref58,vref57,vref56,vref55,vref54,vref53,vref52,vref51,vref50,vref49,vref48,vref47,vref46,vref45,vref44,vref43,vref42,vref41,vref40,vref39,vref38,vref37,vref36,vref35,vref34,vref33,vref32,vref31,vref30,vref29,vref28,vref27,vref26,vref25,vref24,vref23,vref22,vref21,vref20,vref19,vref18,vref17,vref16,vref15,vref14,vref13,vref12,vref11,vref10,vref9,vref8,vref7,vref6,vref5,vref4,vref3,vref2,vref1,vref0
-x1 VDD vref62 vref61 vref60 vref59 vref58 vref57 vref56 vref55 vref54 vref53 vref52 vref51 vref50 vref49 vref48 vref47 vref46
-+ vref45 vref44 vref43 vref42 vref41 vref40 vref39 vref38 vref37 vref36 vref35 vref34 vref33 vref32 vref31 vref30 vref29 vref28 vref27
-+ vref26 vref25 vref24 vref23 vref22 vref21 vref20 vref19 vref18 vref17 vref16 vref15 vref14 vref13 vref12 vref11 vref10 vref9 vref8 vref7
-+ vref6 vref5 vref4 vref3 vref2 vref1 vref0 VSS ref_ladder_top
-x2 vout62 vout61 vout60 vout59 vout58 vout57 vout56 vout55 vout54 vout53 vout52 vout51 vout50 vout49 vout48 vout47 vout46 vout45
-+ vout44 vout43 vout42 vout41 vout40 vout39 vout38 vout37 vout36 vout35 vout34 vout33 vout32 vout31 vout30 vout29 vout28 vout27 vout26
-+ vout25 vout24 vout23 vout22 vout21 vout20 vout19 vout18 vout17 vout16 vout15 vout14 vout13 vout12 vout11 vout10 vout9 vout8 vout7 vout6
-+ vout5 vout4 vout3 vout2 vout1 vout0 VDD VSS vref62 vref61 vref60 vref59 vref58 vref57 vref56 vref55 vref54 vref53 vref52 vref51 vref50
-+ vref49 vref48 vref47 vref46 vref45 vref44 vref43 vref42 vref41 vref40 vref39 vref38 vref37 vref36 vref35 vref34 vref33 vref32 vref31
-+ vref30 vref29 vref28 vref27 vref26 vref25 vref24 vref23 vref22 vref21 vref20 vref19 vref18 vref17 vref16 vref15 vref14 vref13 vref12
-+ vref11 vref10 vref9 vref8 vref7 vref6 vref5 vref4 vref3 vref2 vref1 vref0 VIN comp_top_ideal
+*.iopin
+*+ comp_out62,comp_out61,comp_out60,comp_out59,comp_out58,comp_out57,comp_out56,comp_out55,comp_out54,comp_out53,comp_out52,comp_out51,comp_out50,comp_out49,comp_out48,comp_out47,comp_out46,comp_out45,comp_out44,comp_out43,comp_out42,comp_out41,comp_out40,comp_out39,comp_out38,comp_out37,comp_out36,comp_out35,comp_out34,comp_out33,comp_out32,comp_out31,comp_out30,comp_out29,comp_out28,comp_out27,comp_out26,comp_out25,comp_out24,comp_out23,comp_out22,comp_out21,comp_out20,comp_out19,comp_out18,comp_out17,comp_out16,comp_out15,comp_out14,comp_out13,comp_out12,comp_out11,comp_out10,comp_out9,comp_out8,comp_out7,comp_out6,comp_out5,comp_out4,comp_out3,comp_out2,comp_out1,comp_out0
+xREF_LADDER VDD vref62 vref61 vref60 vref59 vref58 vref57 vref56 vref55 vref54 vref53 vref52 vref51 vref50 vref49 vref48 vref47
++ vref46 vref45 vref44 vref43 vref42 vref41 vref40 vref39 vref38 vref37 vref36 vref35 vref34 vref33 vref32 vref31 vref30 vref29 vref28
++ vref27 vref26 vref25 vref24 vref23 vref22 vref21 vref20 vref19 vref18 vref17 vref16 vref15 vref14 vref13 vref12 vref11 vref10 vref9
++ vref8 vref7 vref6 vref5 vref4 vref3 vref2 vref1 vref0 VSS ref_ladder_top
+xCOMP_TOP comp_out62 comp_out61 comp_out60 comp_out59 comp_out58 comp_out57 comp_out56 comp_out55 comp_out54 comp_out53 comp_out52
++ comp_out51 comp_out50 comp_out49 comp_out48 comp_out47 comp_out46 comp_out45 comp_out44 comp_out43 comp_out42 comp_out41 comp_out40
++ comp_out39 comp_out38 comp_out37 comp_out36 comp_out35 comp_out34 comp_out33 comp_out32 comp_out31 comp_out30 comp_out29 comp_out28
++ comp_out27 comp_out26 comp_out25 comp_out24 comp_out23 comp_out22 comp_out21 comp_out20 comp_out19 comp_out18 comp_out17 comp_out16
++ comp_out15 comp_out14 comp_out13 comp_out12 comp_out11 comp_out10 comp_out9 comp_out8 comp_out7 comp_out6 comp_out5 comp_out4 comp_out3
++ comp_out2 comp_out1 comp_out0 VDD VSS vref62 vref61 vref60 vref59 vref58 vref57 vref56 vref55 vref54 vref53 vref52 vref51 vref50 vref49
++ vref48 vref47 vref46 vref45 vref44 vref43 vref42 vref41 vref40 vref39 vref38 vref37 vref36 vref35 vref34 vref33 vref32 vref31 vref30
++ vref29 vref28 vref27 vref26 vref25 vref24 vref23 vref22 vref21 vref20 vref19 vref18 vref17 vref16 vref15 vref14 vref13 vref12 vref11
++ vref10 vref9 vref8 vref7 vref6 vref5 vref4 vref3 vref2 vref1 vref0 VIN comp_top_ideal
+xDECODER_6BIT_VERILOGA VDD OUT5 OUT4 OUT3 OUT2 OUT1 OUT0 comp_out62 comp_out61 comp_out60 comp_out59 comp_out58 comp_out57
++ comp_out56 comp_out55 comp_out54 comp_out53 comp_out52 comp_out51 comp_out50 comp_out49 comp_out48 comp_out47 comp_out46 comp_out45
++ comp_out44 comp_out43 comp_out42 comp_out41 comp_out40 comp_out39 comp_out38 comp_out37 comp_out36 comp_out35 comp_out34 comp_out33
++ comp_out32 comp_out31 comp_out30 comp_out29 comp_out28 comp_out27 comp_out26 comp_out25 comp_out24 comp_out23 comp_out22 comp_out21
++ comp_out20 comp_out19 comp_out18 comp_out17 comp_out16 comp_out15 comp_out14 comp_out13 comp_out12 comp_out11 comp_out10 comp_out9 comp_out8
++ comp_out7 comp_out6 comp_out5 comp_out4 comp_out3 comp_out2 comp_out1 comp_out0 VSS VREF decoder_6bit_cell
 **.ends
 
 * expanding   symbol:  schematics/ref_ladder_top.sym # of pins=3
@@ -182,6 +193,30 @@ xCOMP0 VDD VSS VIN vout0 vref0 ideal_comp
 .ends
 
 
+* expanding   symbol:  schematics/decoder_top.sym # of pins=4
+** sym_path: /home/nwells/xschem/6_bit_flash/schematics/decoder_top.sym
+** sch_path: /home/nwells/xschem/6_bit_flash/schematics/decoder_top.sch
+.subckt decoder_top VDD OUT5 OUT4 OUT3 OUT2 OUT1 OUT0 VSS decode_in62 decode_in61 decode_in60 decode_in59 decode_in58 decode_in57
++ decode_in56 decode_in55 decode_in54 decode_in53 decode_in52 decode_in51 decode_in50 decode_in49 decode_in48 decode_in47 decode_in46
++ decode_in45 decode_in44 decode_in43 decode_in42 decode_in41 decode_in40 decode_in39 decode_in38 decode_in37 decode_in36 decode_in35
++ decode_in34 decode_in33 decode_in32 decode_in31 decode_in30 decode_in29 decode_in28 decode_in27 decode_in26 decode_in25 decode_in24
++ decode_in23 decode_in22 decode_in21 decode_in20 decode_in19 decode_in18 decode_in17 decode_in16 decode_in15 decode_in14 decode_in13
++ decode_in12 decode_in11 decode_in10 decode_in9 decode_in8 decode_in7 decode_in6 decode_in5 decode_in4 decode_in3 decode_in2 decode_in1
++ decode_in0
+*.ipin
+*+ decode_in62,decode_in61,decode_in60,decode_in59,decode_in58,decode_in57,decode_in56,decode_in55,decode_in54,decode_in53,decode_in52,decode_in51,decode_in50,decode_in49,decode_in48,decode_in47,decode_in46,decode_in45,decode_in44,decode_in43,decode_in42,decode_in41,decode_in40,decode_in39,decode_in38,decode_in37,decode_in36,decode_in35,decode_in34,decode_in33,decode_in32,decode_in31,decode_in30,decode_in29,decode_in28,decode_in27,decode_in26,decode_in25,decode_in24,decode_in23,decode_in22,decode_in21,decode_in20,decode_in19,decode_in18,decode_in17,decode_in16,decode_in15,decode_in14,decode_in13,decode_in12,decode_in11,decode_in10,decode_in9,decode_in8,decode_in7,decode_in6,decode_in5,decode_in4,decode_in3,decode_in2,decode_in1,decode_in0
+*.ipin VDD
+*.ipin VSS
+*.opin OUT5,OUT4,OUT3,OUT2,OUT1,OUT0
+XR1 net1 OUT5 VSS sky130_fd_pr__res_high_po W=1 L=1 mult=1 m=1
+XR2 net1 OUT4 VSS sky130_fd_pr__res_high_po W=1 L=1 mult=1 m=1
+XR3 net1 OUT3 VSS sky130_fd_pr__res_high_po W=1 L=1 mult=1 m=1
+XR4 net2 OUT2 VSS sky130_fd_pr__res_high_po W=1 L=1 mult=1 m=1
+XR5 net2 OUT1 VSS sky130_fd_pr__res_high_po W=1 L=1 mult=1 m=1
+XR6 net2 OUT0 VSS sky130_fd_pr__res_high_po W=1 L=1 mult=1 m=1
+.ends
+
+
 * expanding   symbol:  schematics/ideal_comp.sym # of pins=5
 ** sym_path: /home/nwells/xschem/6_bit_flash/schematics/ideal_comp.sym
 ** sch_path: /home/nwells/xschem/6_bit_flash/schematics/ideal_comp.sch
@@ -195,4 +230,21 @@ E1 vcvs_out vss vinp vinn 1e6
 B1 vout vss v=( V(vcvs_out) < {vlow} ? {vlow} : (V(vcvs_out) > {vhigh} ? {vhigh} : V(vcvs_out)))
 .ends
 
+**** begin user architecture code
+
+.subckt decoder_6bit_cell vdd out5 out4 out3 out2 out1 out0 dec_in62 dec_in61 dec_in60 dec_in59 dec_in58 dec_in57 dec_in56 dec_in55 dec_in54 dec_in53 dec_in52 dec_in51 dec_in50 dec_in49 dec_in48 dec_in47 dec_in46 dec_in45 dec_in44 dec_in43 dec_in42 dec_in41 dec_in40 dec_in39 dec_in38 dec_in37 dec_in36 dec_in35 dec_in34 dec_in33 dec_in32 dec_in31 dec_in30 dec_in29 dec_in28 dec_in27 dec_in26 dec_in25 dec_in24 dec_in23 dec_in22 dec_in21 dec_in20 dec_in19 dec_in18 dec_in17 dec_in16 dec_in15 dec_in14 dec_in13 dec_in12 dec_in11 dec_in10 dec_in9 dec_in8 dec_in7 dec_in6 dec_in5 dec_in4 dec_in3 dec_in2 dec_in1 dec_in0 vss vref
+N1 vdd out5 out4 out3 out2 out1 out0 dec_in62 dec_in61 dec_in60 dec_in59 dec_in58 dec_in57 dec_in56 dec_in55 dec_in54 dec_in53 dec_in52 dec_in51 dec_in50 dec_in49 dec_in48 dec_in47 dec_in46 dec_in45 dec_in44 dec_in43 dec_in42 dec_in41 dec_in40 dec_in39 dec_in38 dec_in37 dec_in36 dec_in35 dec_in34 dec_in33 dec_in32 dec_in31 dec_in30 dec_in29 dec_in28 dec_in27 dec_in26 dec_in25 dec_in24 dec_in23 dec_in22 dec_in21 dec_in20 dec_in19 dec_in18 dec_in17 dec_in16 dec_in15 dec_in14 dec_in13 dec_in12 dec_in11 dec_in10 dec_in9 dec_in8 dec_in7 dec_in6 dec_in5 dec_in4 dec_in3 dec_in2 dec_in1 dec_in0 vss vref decoder_6bit_model
+.ends decoder_6bit_cell
+
+.model decoder_6bit_model decoder_6bit
+
+
+
+.control
+* following line specifies the location for the .osdi file so ngspice can use it.
+* working dir set in tcl in startup script as pwd in top location
+pre_osdi /home/nwells/xschem/6_bit_flash/schematics/verilog_a/ideal_decoder.osdi
+.endc
+
+**** end user architecture code
 .end

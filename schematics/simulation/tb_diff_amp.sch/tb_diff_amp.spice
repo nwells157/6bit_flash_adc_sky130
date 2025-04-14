@@ -1,0 +1,39 @@
+** sch_path: /home/nwells/xschem/6_bit_flash/schematics/tb_diff_amp.sch
+**.subckt tb_diff_amp
+V3 A 0 3.1
+V1 B 0 3
+XU1 Z A B diff_amp_cell
+**** begin user architecture code
+
+
+.options savecurrents
+.control
+  save all
+  op
+  remzerovec
+  write tb_diff_amp.raw
+  dc V1 0 6 0.01
+  set appendwrite
+  remzerovec
+  write tb_diff_amp.raw
+  quit 0
+.endc
+
+
+**** end user architecture code
+**.ends
+**** begin user architecture code
+
+.subckt diff_amp_cell OUT IN1 IN2
+N1 out in1 in2 diff_amp_model
+.ends diff_amp_cell
+
+.model diff_amp_model diff_amp
+
+.control
+* following line specifies the location for the .osdi file so ngspice can use it.
+pre_osdi /home/nwells/xschem/6_bit_flash/schematics/verilog_a/diff_amp.osdi
+.endc
+
+**** end user architecture code
+.end

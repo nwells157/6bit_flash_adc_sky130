@@ -1,0 +1,14 @@
+** sch_path: /home/nwells/xschem/6_bit_flash/ideal_dac_temp.sch
+**.subckt ideal_dac_temp in0 in1 in2 in3 in4 in5 vdd out vss vref
+*.ipin in0
+*.ipin in1
+*.ipin in2
+*.ipin in3
+*.ipin in4
+*.ipin in5
+*.ipin vdd
+*.opin out
+*.ipin vss
+*.ipin vref
+**.ends
+.end

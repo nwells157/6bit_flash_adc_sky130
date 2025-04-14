@@ -1,0 +1,41 @@
+v {xschem version=3.4.6 file_version=1.2}
+G {}
+K {type=ideal_comp_va
+format="@name @@vdd @@vss @@inp @@inn @@vout @model"
+template="name=x1 model=ideal_comp_cell"
+
+device_model="tcleval(
+.subckt ideal_comp_cell VDD VSS INP INN VOUT
+N1 vdd vss inp inn vout ideal_comp_model
+.ends ideal_comp_cell
+
+.model ideal_comp_model ideal_comp
+
+
+.control
+* following line specifies the location for the .osdi file so ngspice can use it.
+* working dir set in tcl in startup script as pwd in top location
+pre_osdi $working_dir/schematics/verilog_a/ideal_comp.osdi
+.endc
+)"}
+V {}
+S {}
+E {}
+L 4 130 -30 150 -30 {}
+L 4 -150 -30 -130 -30 {}
+L 4 -150 -10 -130 -10 {}
+L 4 -150 10 -130 10 {}
+L 4 -150 30 -130 30 {}
+B 5 147.5 -32.5 152.5 -27.5 {name=vout dir=out}
+B 5 -152.5 -32.5 -147.5 -27.5 {name=vdd dir=in}
+B 5 -152.5 -12.5 -147.5 -7.5 {name=vss dir=in}
+B 5 -152.5 7.5 -147.5 12.5 {name=inp dir=in}
+B 5 -152.5 27.5 -147.5 32.5 {name=inn dir=in}
+P 4 5 130 -40 -130 -40 -130 40 130 40 130 -40 {}
+T {@symname} -103.5 -6 0 0 0.3 0.3 {}
+T {@name} 135 -52 0 0 0.2 0.2 {}
+T {vout} 125 -34 0 1 0.2 0.2 {}
+T {vdd} -125 -34 0 0 0.2 0.2 {}
+T {vss} -125 -14 0 0 0.2 0.2 {}
+T {inp} -125 6 0 0 0.2 0.2 {}
+T {inn} -125 26 0 0 0.2 0.2 {}

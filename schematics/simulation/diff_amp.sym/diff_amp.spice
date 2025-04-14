@@ -1,0 +1,5 @@
+** sch_path: /home/nwells/xschem/6_bit_flash/schematics/diff_amp.sym
+**.subckt diff_amp OUT IN1 IN2 model
+
+**.ends
+.end

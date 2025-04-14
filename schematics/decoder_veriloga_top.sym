@@ -1,0 +1,42 @@
+v {xschem version=3.4.6 file_version=1.2}
+G {}
+K {type=decoder_6bit_va
+format="@name @pinlist @model"
+template="name=x1 model=decoder_6bit_cell"
+
+device_model="tcleval(
+.subckt decoder_6bit_cell vdd out5 out4 out3 out2 out1 out0 dec_in62 dec_in61 dec_in60 dec_in59 dec_in58 dec_in57 dec_in56 dec_in55 dec_in54 dec_in53 dec_in52 dec_in51 dec_in50 dec_in49 dec_in48 dec_in47 dec_in46 dec_in45 dec_in44 dec_in43 dec_in42 dec_in41 dec_in40 dec_in39 dec_in38 dec_in37 dec_in36 dec_in35 dec_in34 dec_in33 dec_in32 dec_in31 dec_in30 dec_in29 dec_in28 dec_in27 dec_in26 dec_in25 dec_in24 dec_in23 dec_in22 dec_in21 dec_in20 dec_in19 dec_in18 dec_in17 dec_in16 dec_in15 dec_in14 dec_in13 dec_in12 dec_in11 dec_in10 dec_in9 dec_in8 dec_in7 dec_in6 dec_in5 dec_in4 dec_in3 dec_in2 dec_in1 dec_in0 vss vref
+N1 vdd out5 out4 out3 out2 out1 out0 dec_in62 dec_in61 dec_in60 dec_in59 dec_in58 dec_in57 dec_in56 dec_in55 dec_in54 dec_in53 dec_in52 dec_in51 dec_in50 dec_in49 dec_in48 dec_in47 dec_in46 dec_in45 dec_in44 dec_in43 dec_in42 dec_in41 dec_in40 dec_in39 dec_in38 dec_in37 dec_in36 dec_in35 dec_in34 dec_in33 dec_in32 dec_in31 dec_in30 dec_in29 dec_in28 dec_in27 dec_in26 dec_in25 dec_in24 dec_in23 dec_in22 dec_in21 dec_in20 dec_in19 dec_in18 dec_in17 dec_in16 dec_in15 dec_in14 dec_in13 dec_in12 dec_in11 dec_in10 dec_in9 dec_in8 dec_in7 dec_in6 dec_in5 dec_in4 dec_in3 dec_in2 dec_in1 dec_in0 vss vref decoder_6bit_model
+.ends decoder_6bit_cell
+
+.model decoder_6bit_model decoder_6bit
+
+
+
+.control
+* following line specifies the location for the .osdi file so ngspice can use it.
+* working dir set in tcl in startup script as pwd in top location
+pre_osdi $working_dir/schematics/verilog_a/ideal_decoder.osdi
+.endc
+)"}
+V {}
+S {}
+E {}
+L 4 -150 -30 -130 -30 {}
+L 4 130 -30 150 -30 {}
+L 4 -150 -10 -130 -10 {}
+L 4 -150 10 -130 10 {}
+L 4 -150 30 -130 30 {}
+B 5 -152.5 -32.5 -147.5 -27.5 {name=vdd dir=in}
+B 5 147.5 -32.5 152.5 -27.5 {name=out[5..0] dir=out}
+B 5 -152.5 -12.5 -147.5 -7.5 {name=dec_in[62..0] dir=in}
+B 5 -152.5 7.5 -147.5 12.5 {name=vss dir=in}
+B 5 -152.5 27.5 -147.5 32.5 {name=vref dir=in}
+P 4 5 130 -40 -130 -40 -130 40 130 40 130 -40 {}
+T {@symname} -38 -6 0 0 0.3 0.3 {}
+T {@name} 135 -62 0 0 0.2 0.2 {}
+T {vdd} -125 -34 0 0 0.2 0.2 {}
+T {out[5..0]} 125 -34 0 1 0.2 0.2 {}
+T {dec_in[62..0]} -125 -14 0 0 0.2 0.2 {}
+T {vss} -125 6 0 0 0.2 0.2 {}
+T {vref} -125 26 0 0 0.2 0.2 {}

@@ -1,0 +1,16 @@
+** sch_path: /home/nwells/xschem/6_bit_flash/schematics/decoder_veriloga_top.sch
+**.subckt decoder_veriloga_top decode_in20 decode_in10 decode_in0 decode_in60 vdd out0 decode_in11 decode_in1 decode_in61
+*+ decode_in21 out1 vss decode_in62 decode_in12 decode_in2 decode_in22 out2 decode_in3 decode_in23 vref decode_in13 out3 decode_in24 decode_in4
+*+ decode_in14 out4 decode_in25 decode_in5 decode_in15 out5 decode_in26 decode_in6 decode_in16 decode_in27 decode_in7 decode_in17 decode_in8
+*+ decode_in18 decode_in28 decode_in9 decode_in29 decode_in19 decode_in50 decode_in40 decode_in30 decode_in51 decode_in41 decode_in31
+*+ decode_in52 decode_in42 decode_in32 decode_in53 decode_in43 decode_in33 decode_in54 decode_in44 decode_in34 decode_in55 decode_in45
+*+ decode_in35 decode_in56 decode_in46 decode_in36 decode_in57 decode_in47 decode_in37 decode_in58 decode_in48 decode_in38 decode_in59
+*+ decode_in49 decode_in39
+*.ipin vdd
+*.ipin vss
+*.ipin vref
+*.ipin
+*+ dec_in62,dec_in61,dec_in60,dec_in59,dec_in58,dec_in57,dec_in56,dec_in55,dec_in54,dec_in53,dec_in52,dec_in51,dec_in50,dec_in49,dec_in48,dec_in47,dec_in46,dec_in45,dec_in44,dec_in43,dec_in42,dec_in41,dec_in40,dec_in39,dec_in38,dec_in37,dec_in36,dec_in35,dec_in34,dec_in33,dec_in32,dec_in31,dec_in30,dec_in29,dec_in28,dec_in27,dec_in26,dec_in25,dec_in24,dec_in23,dec_in22,dec_in21,dec_in20,dec_in19,dec_in18,dec_in17,dec_in16,dec_in15,dec_in14,dec_in13,dec_in12,dec_in11,dec_in10,dec_in9,dec_in8,dec_in7,dec_in6,dec_in5,dec_in4,dec_in3,dec_in2,dec_in1,dec_in0
+*.opin out5,out4,out3,out2,out1,out0
+**.ends
+.end

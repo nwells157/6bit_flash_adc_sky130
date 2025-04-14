@@ -1,0 +1,47 @@
+`include "constants.vams"
+`include "disciplines.vams"
+
+module dac_6bit(out, vdd, vss, vref, in0, in1, in2, in3, in4, in5);
+
+input in0, in1, in2, in3, in4, in5, vdd, vref, vss;
+electrical in0, in1, in2, in3, in4, in5, vdd, vref, vss;
+
+output out;
+electrical out;
+
+parameter real creash_prevention = 0;
+
+integer code = 0;
+real value = 0;
+
+analog begin
+    
+    code = 0;
+
+    if (V(in0) >= V(vdd)/2) begin
+        code = code + 1;
+    end
+    if (V(in1) >= V(vdd)/2) begin
+        code = code + 2;
+    end
+    if (V(in2) >= V(vdd)/2) begin
+        code = code + 4;
+    end
+    if (V(in3) >= V(vdd)/2) begin
+        code = code + 8;
+    end
+    if (V(in4) >= V(vdd)/2) begin
+        code = code + 16;
+    end
+    if (V(in5) >= V(vdd)/2) begin
+        code = code + 32;
+    end
+
+    value = V(vdd) * code / 63;
+    V(out) <+ value;
+
+end
+
+    
+
+endmodule

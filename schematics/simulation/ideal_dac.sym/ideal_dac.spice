@@ -1,0 +1,4 @@
+** sch_path: /home/nwells/xschem/6_bit_flash/schematics/ideal_dac.sym
+**.subckt ideal_dac out vdd vss vref in0 in1 in2 in3 in4 in5
+**.ends
+.end

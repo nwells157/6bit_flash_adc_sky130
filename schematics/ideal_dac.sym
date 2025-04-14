@@ -1,0 +1,55 @@
+v {xschem version=3.4.6 file_version=1.2}
+G {}
+K {type=dac_va
+format="@name @@out @@vdd @@vss @@vref @@in0 @@in1 @@in2 @@in3 @@in4 @@in5 @model"
+template="name=x1 model=ideal_dac_cell"
+
+device_model="tcleval(
+.subckt ideal_dac_cell OUT VDD VSS VREF IN0 IN1 IN2 IN3 IN4 IN5
+N1 out vdd vss vref in0 in1 in2 in3 in4 in5 ideal_dac_model
+.ends ideal_dac_cell
+
+.model ideal_dac_model dac_6bit
+
+
+.control
+* following line specifies the location for the .osdi file so ngspice can use it.
+pre_osdi $working_dir/schematics/verilog_a/ideal_dac.osdi
+.endc
+)"}
+V {}
+S {}
+E {}
+L 4 130 -80 150 -80 {}
+L 4 -150 -80 -130 -80 {}
+L 4 -150 -60 -130 -60 {}
+L 4 -150 -40 -130 -40 {}
+L 4 -150 -20 -130 -20 {}
+L 4 -150 0 -130 0 {}
+L 4 -150 20 -130 20 {}
+L 4 -150 40 -130 40 {}
+L 4 -150 60 -130 60 {}
+L 4 -150 80 -130 80 {}
+B 5 147.5 -82.5 152.5 -77.5 {name=out dir=out}
+B 5 -152.5 -82.5 -147.5 -77.5 {name=vdd dir=in}
+B 5 -152.5 -62.5 -147.5 -57.5 {name=vss dir=in}
+B 5 -152.5 -42.5 -147.5 -37.5 {name=vref dir=in}
+B 5 -152.5 -22.5 -147.5 -17.5 {name=in0 dir=in}
+B 5 -152.5 -2.5 -147.5 2.5 {name=in1 dir=in}
+B 5 -152.5 17.5 -147.5 22.5 {name=in2 dir=in}
+B 5 -152.5 37.5 -147.5 42.5 {name=in3 dir=in}
+B 5 -152.5 57.5 -147.5 62.5 {name=in4 dir=in}
+B 5 -152.5 77.5 -147.5 82.5 {name=in5 dir=in}
+P 4 5 130 -90 -130 -90 -130 90 130 90 130 -90 {}
+T {@symname} -81 -6 0 0 0.3 0.3 {}
+T {@name} 135 -102 0 0 0.2 0.2 {}
+T {out} 125 -84 0 1 0.2 0.2 {}
+T {vdd} -125 -84 0 0 0.2 0.2 {}
+T {vss} -125 -64 0 0 0.2 0.2 {}
+T {vref} -125 -44 0 0 0.2 0.2 {}
+T {in0} -125 -24 0 0 0.2 0.2 {}
+T {in1} -125 -4 0 0 0.2 0.2 {}
+T {in2} -125 16 0 0 0.2 0.2 {}
+T {in3} -125 36 0 0 0.2 0.2 {}
+T {in4} -125 56 0 0 0.2 0.2 {}
+T {in5} -125 76 0 0 0.2 0.2 {}
