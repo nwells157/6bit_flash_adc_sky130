@@ -12,8 +12,8 @@ ypos2=2
 divy=5
 subdivy=4
 unity=1
-x1=0.00012297167
-x2=0.0002634726
+x1=2.7538282e-05
+x2=3.2601853e-05
 divx=5
 subdivx=4
 xlabmag=1.0
@@ -53,8 +53,9 @@ C {devices/code.sym} 80 -190 0 0 {name=sim_code only_toplevel=false value="
 #####################
 
 .param vdd=1.8 vss=0 vref=vdd/2
-.param sin_offset=vdd/2 sin_amp=vdd/2 sin_freq=10k sin_period= 1/sin_freq
-.param tran_step=sin_period/1e3 tran_stop_time=sin_period*3
+.param sin_offset=vdd/2 sin_amp=vdd/2 sin_freq=1e6 sin_period= 1/sin_freq
+.param tran_step=sin_period/1e2 tran_stop_time=sin_period*100
+.param delay=sin_period*1
 
 #####################
 # Device parameters #
@@ -68,7 +69,7 @@ C {devices/code.sym} 80 -190 0 0 {name=sim_code only_toplevel=false value="
 
 # Run setup
 .op
-.tran \{tran_step\} \{tran_stop_time\}
+.tran \{tran_step\} \{tran_stop_time\} \{delay\}
 
 ##################
 .control
@@ -77,11 +78,18 @@ C {devices/code.sym} 80 -190 0 0 {name=sim_code only_toplevel=false value="
 # Run analysis
 run
 
+let lin-tstart = 1u
+let lin-stop = 99u
+let lin-tstep = 5n
+linearize vin ideal_out
+
 # Save expressions
+
 
 # Write to files
 write tb_adc_top.raw
 wrdata ideal.txt vin ideal_out
+
 
 .endc
 

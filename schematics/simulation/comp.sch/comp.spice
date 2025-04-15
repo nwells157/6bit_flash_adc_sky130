@@ -1,0 +1,32 @@
+** sch_path: /home/nwells/xschem/6_bit_flash/schematics/comp.sch
+**.subckt comp vdd vss vinp vout vinn
+*.ipin vdd
+*.opin vout
+*.ipin vss
+*.ipin vinp
+*.ipin vinn
+I0 pa_m1_s vss 500u
+XM1 pa_voutp vinn pa_m1_s net2 sky130_fd_pr__nfet_01v8 L=0.15 W=10 nf=1 ad=2.9 as=2.9 pd=20.58 ps=20.58 nrd=0.029 nrs=0.029 sa=0
++ sb=0 sd=0 mult=1 m=1
+XM2 pa_voutn vinp pa_m1_s net3 sky130_fd_pr__nfet_01v8 L=0.15 W=10 nf=1 ad=2.9 as=2.9 pd=20.58 ps=20.58 nrd=0.029 nrs=0.029 sa=0
++ sb=0 sd=0 mult=1 m=1
+XM3 pa_voutp pa_voutp vdd vdd sky130_fd_pr__pfet_01v8 L=0.15 W=1 nf=1 ad=0.29 as=0.29 pd=2.58 ps=2.58 nrd=0.29 nrs=0.29 sa=0 sb=0
++ sd=0 mult=1 m=1
+XM4 pa_voutn pa_voutn vdd vdd sky130_fd_pr__pfet_01v8 L=0.15 W=1 nf=1 ad=0.29 as=0.29 pd=2.58 ps=2.58 nrd=0.29 nrs=0.29 sa=0 sb=0
++ sd=0 mult=1 m=1
+XM5 latch_voutp pa_voutp vdd vdd sky130_fd_pr__pfet_01v8 L=0.15 W=1 nf=1 ad=0.29 as=0.29 pd=2.58 ps=2.58 nrd=0.29 nrs=0.29 sa=0
++ sb=0 sd=0 mult=1 m=1
+XM6 latch_voutn pa_voutn vdd vdd sky130_fd_pr__pfet_01v8 L=0.15 W=1 nf=1 ad=0.29 as=0.29 pd=2.58 ps=2.58 nrd=0.29 nrs=0.29 sa=0
++ sb=0 sd=0 mult=1 m=1
+XM7 latch_voutp latch_voutp net1 vss sky130_fd_pr__nfet_01v8 L=0.15 W=1 nf=1 ad=0.29 as=0.29 pd=2.58 ps=2.58 nrd=0.29 nrs=0.29
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM8 latch_voutn latch_voutn net1 vss sky130_fd_pr__nfet_01v8 L=0.15 W=1 nf=1 ad=0.29 as=0.29 pd=2.58 ps=2.58 nrd=0.29 nrs=0.29
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM9 net1 net1 vss vss sky130_fd_pr__nfet_01v8 L=0.15 W=1 nf=1 ad=0.29 as=0.29 pd=2.58 ps=2.58 nrd=0.29 nrs=0.29 sa=0 sb=0 sd=0
++ mult=1 m=1
+XM10 latch_voutp latch_voutn net1 vss sky130_fd_pr__nfet_01v8 L=0.15 W=1 nf=1 ad=0.29 as=0.29 pd=2.58 ps=2.58 nrd=0.29 nrs=0.29
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM11 latch_voutn latch_voutp net1 vss sky130_fd_pr__nfet_01v8 L=0.15 W=1 nf=1 ad=0.29 as=0.29 pd=2.58 ps=2.58 nrd=0.29 nrs=0.29
++ sa=0 sb=0 sd=0 mult=1 m=1
+**.ends
+.end
