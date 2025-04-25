@@ -12,8 +12,8 @@ ypos2=2
 divy=5
 subdivy=4
 unity=1
-x1=2.7538282e-05
-x2=3.2601853e-05
+x1=-6.7341567e-07
+x2=7.1175918e-06
 divx=5
 subdivx=4
 xlabmag=1.0
@@ -54,7 +54,7 @@ C {devices/code.sym} 80 -190 0 0 {name=sim_code only_toplevel=false value="
 
 .param vdd=1.8 vss=0 vref=vdd/2
 .param sin_offset=vdd/2 sin_amp=vdd/2 sin_freq=1e6 sin_period= 1/sin_freq
-.param tran_step=sin_period/1e2 tran_stop_time=sin_period*100
+.param tran_step=sin_period/1e2 tran_stop_time=sin_period*10
 .param delay=sin_period*1
 
 #####################
@@ -80,7 +80,7 @@ run
 
 let lin-tstart = 1u
 let lin-stop = 99u
-let lin-tstep = 5n
+# let lin-tstep = 5n
 linearize vin ideal_out
 
 # Save expressions
@@ -124,3 +124,9 @@ C {devices/lab_pin.sym} 1350 -670 0 0 {name=p23 lab=VSS}
 C {devices/lab_pin.sym} 1350 -650 0 0 {name=p24 sig_type=std_logic lab=VIN}
 C {devices/lab_pin.sym} 1350 -630 0 0 {name=p25 lab=VREF}
 C {devices/lab_pin.sym} 1650 -690 0 1 {name=p26 lab=veriloga_comp_out}
+C {devices/launcher.sym} 100 -40 0 0 {name=h17 
+descr="Load waves" 
+tclcommand="
+xschem raw_read $netlist_dir/[file tail [file rootname [xschem get current_name]]].raw tran
+"
+}

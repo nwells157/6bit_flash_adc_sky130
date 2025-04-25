@@ -15,8 +15,8 @@ N 560 -690 560 -670 {lab=vdd}
 N 360 -690 360 -670 {lab=vdd}
 N 360 -610 360 -590 {lab=v_m1_d}
 N 360 -590 360 -510 {lab=v_m1_d}
-N 560 -610 560 -590 {lab=#net1}
-N 560 -590 560 -510 {lab=#net1}
+N 560 -610 560 -590 {lab=vout}
+N 560 -590 560 -510 {lab=vout}
 N 360 -670 360 -640 {lab=vdd}
 N 560 -670 560 -640 {lab=vdd}
 N 410 -640 520 -640 {lab=v_m1_d}
@@ -25,21 +25,6 @@ N 360 -590 420 -590 {lab=v_m1_d}
 N 420 -640 420 -590 {lab=v_m1_d}
 N 360 -480 360 -450 {lab=pa_m1_s}
 N 560 -480 560 -450 {lab=pa_m1_s}
-N 1060 -610 1060 -510 {lab=vout}
-N 1060 -480 1060 -450 {lab=vss}
-N 860 -480 860 -450 {lab=vss}
-N 860 -670 860 -640 {lab=vdd}
-N 1060 -670 1060 -640 {lab=vdd}
-N 860 -610 860 -510 {lab=#net2}
-N 1000 -640 1020 -640 {lab=#net2}
-N 1000 -640 1000 -480 {lab=#net2}
-N 1000 -480 1020 -480 {lab=#net2}
-N 860 -560 1000 -560 {lab=#net2}
-N 800 -640 820 -640 {lab=#net1}
-N 800 -640 800 -480 {lab=#net1}
-N 800 -480 820 -480 {lab=#net1}
-N 600 -480 620 -480 {lab=vinn}
-N 560 -560 800 -560 {lab=#net1}
 C {devices/ipin.sym} 70 -90 0 0 {name=p12 lab=vdd}
 C {devices/opin.sym} 100 -90 0 0 {name=p13 lab=vout}
 C {devices/ipin.sym} 70 -70 0 0 {name=p8 lab=vss}
@@ -108,65 +93,10 @@ C {devices/lab_pin.sym} 560 -690 0 0 {name=p11 lab=vdd}
 C {devices/lab_pin.sym} 600 -480 0 1 {name=p10 lab=vinn}
 C {devices/lab_pin.sym} 320 -480 0 0 {name=p14 lab=vinp}
 C {devices/lab_wire.sym} 440 -400 0 0 {name=p23 sig_type=std_logic lab=pa_m1_s}
-C {devices/lab_pin.sym} 1060 -560 0 1 {name=p1 lab=vout}
+C {devices/iopin.sym} 250 -90 0 0 {name=p24 lab=pa_voutp}
+C {devices/iopin.sym} 250 -70 0 0 {name=p25 lab=pa_voutn}
+C {devices/iopin.sym} 250 -50 0 0 {name=p26 lab=latch_voutp}
+C {devices/iopin.sym} 250 -30 0 0 {name=p27 lab=latch_voutn}
+C {devices/lab_pin.sym} 560 -570 0 1 {name=p1 lab=vout}
 C {devices/lab_pin.sym} 360 -570 0 0 {name=p3 lab=v_m1_d}
-C {sky130_fd_pr/nfet_01v8.sym} 840 -480 0 0 {name=M5
-W=1
-L=0.15
-nf=1 
-mult=1
-ad="expr('int((@nf + 1)/2) * @W / @nf * 0.29')"
-pd="expr('2*int((@nf + 1)/2) * (@W / @nf + 0.29)')"
-as="expr('int((@nf + 2)/2) * @W / @nf * 0.29')"
-ps="expr('2*int((@nf + 2)/2) * (@W / @nf + 0.29)')"
-nrd="expr('0.29 / @W ')" nrs="expr('0.29 / @W ')"
-sa=0 sb=0 sd=0
-model=nfet_01v8
-spiceprefix=X
-}
-C {sky130_fd_pr/pfet_01v8.sym} 840 -640 0 0 {name=M6
-W=2
-L=0.15
-nf=1
-mult=1
-ad="expr('int((@nf + 1)/2) * @W / @nf * 0.29')"
-pd="expr('2*int((@nf + 1)/2) * (@W / @nf + 0.29)')"
-as="expr('int((@nf + 2)/2) * @W / @nf * 0.29')"
-ps="expr('2*int((@nf + 2)/2) * (@W / @nf + 0.29)')"
-nrd="expr('0.29 / @W ')" nrs="expr('0.29 / @W ')"
-sa=0 sb=0 sd=0
-model=pfet_01v8
-spiceprefix=X
-}
-C {sky130_fd_pr/nfet_01v8.sym} 1040 -480 0 0 {name=M7
-W=1
-L=0.15
-nf=1 
-mult=1
-ad="expr('int((@nf + 1)/2) * @W / @nf * 0.29')"
-pd="expr('2*int((@nf + 1)/2) * (@W / @nf + 0.29)')"
-as="expr('int((@nf + 2)/2) * @W / @nf * 0.29')"
-ps="expr('2*int((@nf + 2)/2) * (@W / @nf + 0.29)')"
-nrd="expr('0.29 / @W ')" nrs="expr('0.29 / @W ')"
-sa=0 sb=0 sd=0
-model=nfet_01v8
-spiceprefix=X
-}
-C {sky130_fd_pr/pfet_01v8.sym} 1040 -640 0 0 {name=M8
-W=2
-L=0.15
-nf=1
-mult=1
-ad="expr('int((@nf + 1)/2) * @W / @nf * 0.29')"
-pd="expr('2*int((@nf + 1)/2) * (@W / @nf + 0.29)')"
-as="expr('int((@nf + 2)/2) * @W / @nf * 0.29')"
-ps="expr('2*int((@nf + 2)/2) * (@W / @nf + 0.29)')"
-nrd="expr('0.29 / @W ')" nrs="expr('0.29 / @W ')"
-sa=0 sb=0 sd=0
-model=pfet_01v8
-spiceprefix=X
-}
-C {devices/lab_pin.sym} 860 -670 0 1 {name=p9 lab=vdd}
-C {devices/lab_pin.sym} 1060 -670 0 1 {name=p15 lab=vdd}
-C {devices/lab_pin.sym} 860 -450 0 1 {name=p16 lab=vss}
-C {devices/lab_pin.sym} 1060 -450 0 1 {name=p17 lab=vss}
+C {devices/iopin.sym} 250 -10 0 0 {name=p6 lab=pa_m1_s}

@@ -134,13 +134,8 @@ C {devices/gnd.sym} 640 -90 0 0 {name=l2 lab=GND}
 C {devices/vsource.sym} 640 -150 0 0 {name=V4 value=vref}
 C {devices/lab_pin.sym} 640 -220 0 0 {name=p8 sig_type=std_logic lab=VREF}
 C {schematics/comp.sym} 650 -560 0 0 {name=xDUT}
-C {devices/lab_pin.sym} 800 -610 0 1 {name=p2 lab=pa_voutp}
-C {devices/lab_pin.sym} 500 -610 0 0 {name=p3 lab=VDD}
+C {devices/lab_pin.sym} 500 -590 0 0 {name=p3 lab=VDD}
 C {devices/lab_pin.sym} 800 -590 0 1 {name=p4 lab=vout}
-C {devices/lab_pin.sym} 800 -570 0 1 {name=p5 lab=pa_voutn}
-C {devices/lab_pin.sym} 500 -590 0 0 {name=p6 lab=VSS}
-C {devices/lab_pin.sym} 500 -570 0 0 {name=p10 lab=VIN}
-C {devices/lab_pin.sym} 800 -550 0 1 {name=p12 lab=latch_voutp}
-C {devices/lab_pin.sym} 800 -530 0 1 {name=p13 lab=latch_voutn}
-C {devices/lab_pin.sym} 500 -550 0 0 {name=p14 lab=VREF}
-C {devices/lab_pin.sym} 800 -510 0 1 {name=p18 lab=pa_m1_s}
+C {devices/lab_pin.sym} 500 -570 0 0 {name=p6 lab=VSS}
+C {devices/lab_pin.sym} 500 -550 0 0 {name=p10 lab=VIN}
+C {devices/lab_pin.sym} 500 -530 0 0 {name=p14 lab=VREF}

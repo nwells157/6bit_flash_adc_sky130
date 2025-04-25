@@ -10,15 +10,16 @@ C {devices/lab_pin.sym} 100 -350 0 0 {name=p3 sig_type=std_logic lab=VDD}
 C {devices/lab_pin.sym} 400 -350 0 1 {name=p1 lab=vref[62..0]}
 C {devices/lab_pin.sym} 680 -370 0 0 {name=p4 lab=VDD}
 C {devices/lab_pin.sym} 680 -350 0 0 {name=p5 lab=VSS}
-C {schematics/comp_top_ideal.sym} 830 -340 0 0 {name=xCOMP_TOP}
+C {schematics/comp_top_ideal.sym} 830 -340 0 0 {name=xIDEAL_COMP_TOP
+spice_ignore=true}
 C {devices/ipin.sym} 80 -180 0 0 {name=p8 lab=VDD}
 C {devices/ipin.sym} 80 -160 0 0 {name=p10 lab=VSS}
 C {devices/ipin.sym} 80 -140 0 0 {name=p11 lab=VIN}
 C {devices/ipin.sym} 80 -120 0 0 {name=p12 lab=VREF}
 C {devices/opin.sym} 120 -180 0 0 {name=p13 lab=OUT[5..0]}
-C {devices/lab_pin.sym} 680 -330 0 0 {name=p6 lab=vref[62..0]}
-C {devices/lab_pin.sym} 680 -310 0 0 {name=p7 lab=VIN}
-C {devices/lab_pin.sym} 980 -370 0 1 {name=p2 lab=comp_out[62..0]}
+C {devices/lab_pin.sym} 670 -560 0 0 {name=p6 lab=vref[62..0]}
+C {devices/lab_pin.sym} 670 -540 0 0 {name=p7 lab=VIN}
+C {devices/lab_pin.sym} 970 -600 0 1 {name=p2 lab=comp_out[62..0]}
 C {devices/iopin.sym} 120 -160 0 0 {name=p14 lab=vref[62..0]}
 C {devices/iopin.sym} 120 -140 0 0 {name=p15 lab=comp_out[62..0]}
 C {schematics/decoder_top.sym} 1590 -360 0 0 {name=xDECODER
@@ -41,3 +42,6 @@ C {devices/lab_pin.sym} 1740 -610 0 1 {name=p30 lab=OUT[5..0]}
 C {devices/lab_pin.sym} 1440 -590 0 0 {name=p31 lab=comp_out[62..0]}
 C {devices/lab_pin.sym} 1440 -570 0 0 {name=p32 lab=VSS}
 C {devices/lab_pin.sym} 1440 -550 0 0 {name=p33 lab=VREF}
+C {devices/lab_pin.sym} 670 -600 0 0 {name=p16 lab=VDD}
+C {devices/lab_pin.sym} 670 -580 0 0 {name=p19 lab=VSS}
+C {schematics/comp_top.sym} 820 -570 0 0 {name=xCOMP_TOP}

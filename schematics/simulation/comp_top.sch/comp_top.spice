@@ -1,0 +1,110 @@
+** sch_path: /home/nwells/xschem/6_bit_flash/schematics/comp_top.sch
+**.subckt comp_top VDD
+*+ vout62,vout61,vout60,vout59,vout58,vout57,vout56,vout55,vout54,vout53,vout52,vout51,vout50,vout49,vout48,vout47,vout46,vout45,vout44,vout43,vout42,vout41,vout40,vout39,vout38,vout37,vout36,vout35,vout34,vout33,vout32,vout31,vout30,vout29,vout28,vout27,vout26,vout25,vout24,vout23,vout22,vout21,vout20,vout19,vout18,vout17,vout16,vout15,vout14,vout13,vout12,vout11,vout10,vout9,vout8,vout7,vout6,vout5,vout4,vout3,vout2,vout1,vout0 VSS
+*+ vref62,vref61,vref60,vref59,vref58,vref57,vref56,vref55,vref54,vref53,vref52,vref51,vref50,vref49,vref48,vref47,vref46,vref45,vref44,vref43,vref42,vref41,vref40,vref39,vref38,vref37,vref36,vref35,vref34,vref33,vref32,vref31,vref30,vref29,vref28,vref27,vref26,vref25,vref24,vref23,vref22,vref21,vref20,vref19,vref18,vref17,vref16,vref15,vref14,vref13,vref12,vref11,vref10,vref9,vref8,vref7,vref6,vref5,vref4,vref3,vref2,vref1,vref0 VIN
+*.opin
+*+ vout62,vout61,vout60,vout59,vout58,vout57,vout56,vout55,vout54,vout53,vout52,vout51,vout50,vout49,vout48,vout47,vout46,vout45,vout44,vout43,vout42,vout41,vout40,vout39,vout38,vout37,vout36,vout35,vout34,vout33,vout32,vout31,vout30,vout29,vout28,vout27,vout26,vout25,vout24,vout23,vout22,vout21,vout20,vout19,vout18,vout17,vout16,vout15,vout14,vout13,vout12,vout11,vout10,vout9,vout8,vout7,vout6,vout5,vout4,vout3,vout2,vout1,vout0
+*.ipin VDD
+*.ipin VSS
+*.ipin
+*+ vref62,vref61,vref60,vref59,vref58,vref57,vref56,vref55,vref54,vref53,vref52,vref51,vref50,vref49,vref48,vref47,vref46,vref45,vref44,vref43,vref42,vref41,vref40,vref39,vref38,vref37,vref36,vref35,vref34,vref33,vref32,vref31,vref30,vref29,vref28,vref27,vref26,vref25,vref24,vref23,vref22,vref21,vref20,vref19,vref18,vref17,vref16,vref15,vref14,vref13,vref12,vref11,vref10,vref9,vref8,vref7,vref6,vref5,vref4,vref3,vref2,vref1,vref0
+*.ipin VIN
+xCOMP62 net1[62] VDD vout62 net2[62] VSS VIN net3[62] net4[62] vref62 net5[62] comp
+xCOMP61 net1[61] VDD vout61 net2[61] VSS VIN net3[61] net4[61] vref61 net5[61] comp
+xCOMP60 net1[60] VDD vout60 net2[60] VSS VIN net3[60] net4[60] vref60 net5[60] comp
+xCOMP59 net1[59] VDD vout59 net2[59] VSS VIN net3[59] net4[59] vref59 net5[59] comp
+xCOMP58 net1[58] VDD vout58 net2[58] VSS VIN net3[58] net4[58] vref58 net5[58] comp
+xCOMP57 net1[57] VDD vout57 net2[57] VSS VIN net3[57] net4[57] vref57 net5[57] comp
+xCOMP56 net1[56] VDD vout56 net2[56] VSS VIN net3[56] net4[56] vref56 net5[56] comp
+xCOMP55 net1[55] VDD vout55 net2[55] VSS VIN net3[55] net4[55] vref55 net5[55] comp
+xCOMP54 net1[54] VDD vout54 net2[54] VSS VIN net3[54] net4[54] vref54 net5[54] comp
+xCOMP53 net1[53] VDD vout53 net2[53] VSS VIN net3[53] net4[53] vref53 net5[53] comp
+xCOMP52 net1[52] VDD vout52 net2[52] VSS VIN net3[52] net4[52] vref52 net5[52] comp
+xCOMP51 net1[51] VDD vout51 net2[51] VSS VIN net3[51] net4[51] vref51 net5[51] comp
+xCOMP50 net1[50] VDD vout50 net2[50] VSS VIN net3[50] net4[50] vref50 net5[50] comp
+xCOMP49 net1[49] VDD vout49 net2[49] VSS VIN net3[49] net4[49] vref49 net5[49] comp
+xCOMP48 net1[48] VDD vout48 net2[48] VSS VIN net3[48] net4[48] vref48 net5[48] comp
+xCOMP47 net1[47] VDD vout47 net2[47] VSS VIN net3[47] net4[47] vref47 net5[47] comp
+xCOMP46 net1[46] VDD vout46 net2[46] VSS VIN net3[46] net4[46] vref46 net5[46] comp
+xCOMP45 net1[45] VDD vout45 net2[45] VSS VIN net3[45] net4[45] vref45 net5[45] comp
+xCOMP44 net1[44] VDD vout44 net2[44] VSS VIN net3[44] net4[44] vref44 net5[44] comp
+xCOMP43 net1[43] VDD vout43 net2[43] VSS VIN net3[43] net4[43] vref43 net5[43] comp
+xCOMP42 net1[42] VDD vout42 net2[42] VSS VIN net3[42] net4[42] vref42 net5[42] comp
+xCOMP41 net1[41] VDD vout41 net2[41] VSS VIN net3[41] net4[41] vref41 net5[41] comp
+xCOMP40 net1[40] VDD vout40 net2[40] VSS VIN net3[40] net4[40] vref40 net5[40] comp
+xCOMP39 net1[39] VDD vout39 net2[39] VSS VIN net3[39] net4[39] vref39 net5[39] comp
+xCOMP38 net1[38] VDD vout38 net2[38] VSS VIN net3[38] net4[38] vref38 net5[38] comp
+xCOMP37 net1[37] VDD vout37 net2[37] VSS VIN net3[37] net4[37] vref37 net5[37] comp
+xCOMP36 net1[36] VDD vout36 net2[36] VSS VIN net3[36] net4[36] vref36 net5[36] comp
+xCOMP35 net1[35] VDD vout35 net2[35] VSS VIN net3[35] net4[35] vref35 net5[35] comp
+xCOMP34 net1[34] VDD vout34 net2[34] VSS VIN net3[34] net4[34] vref34 net5[34] comp
+xCOMP33 net1[33] VDD vout33 net2[33] VSS VIN net3[33] net4[33] vref33 net5[33] comp
+xCOMP32 net1[32] VDD vout32 net2[32] VSS VIN net3[32] net4[32] vref32 net5[32] comp
+xCOMP31 net1[31] VDD vout31 net2[31] VSS VIN net3[31] net4[31] vref31 net5[31] comp
+xCOMP30 net1[30] VDD vout30 net2[30] VSS VIN net3[30] net4[30] vref30 net5[30] comp
+xCOMP29 net1[29] VDD vout29 net2[29] VSS VIN net3[29] net4[29] vref29 net5[29] comp
+xCOMP28 net1[28] VDD vout28 net2[28] VSS VIN net3[28] net4[28] vref28 net5[28] comp
+xCOMP27 net1[27] VDD vout27 net2[27] VSS VIN net3[27] net4[27] vref27 net5[27] comp
+xCOMP26 net1[26] VDD vout26 net2[26] VSS VIN net3[26] net4[26] vref26 net5[26] comp
+xCOMP25 net1[25] VDD vout25 net2[25] VSS VIN net3[25] net4[25] vref25 net5[25] comp
+xCOMP24 net1[24] VDD vout24 net2[24] VSS VIN net3[24] net4[24] vref24 net5[24] comp
+xCOMP23 net1[23] VDD vout23 net2[23] VSS VIN net3[23] net4[23] vref23 net5[23] comp
+xCOMP22 net1[22] VDD vout22 net2[22] VSS VIN net3[22] net4[22] vref22 net5[22] comp
+xCOMP21 net1[21] VDD vout21 net2[21] VSS VIN net3[21] net4[21] vref21 net5[21] comp
+xCOMP20 net1[20] VDD vout20 net2[20] VSS VIN net3[20] net4[20] vref20 net5[20] comp
+xCOMP19 net1[19] VDD vout19 net2[19] VSS VIN net3[19] net4[19] vref19 net5[19] comp
+xCOMP18 net1[18] VDD vout18 net2[18] VSS VIN net3[18] net4[18] vref18 net5[18] comp
+xCOMP17 net1[17] VDD vout17 net2[17] VSS VIN net3[17] net4[17] vref17 net5[17] comp
+xCOMP16 net1[16] VDD vout16 net2[16] VSS VIN net3[16] net4[16] vref16 net5[16] comp
+xCOMP15 net1[15] VDD vout15 net2[15] VSS VIN net3[15] net4[15] vref15 net5[15] comp
+xCOMP14 net1[14] VDD vout14 net2[14] VSS VIN net3[14] net4[14] vref14 net5[14] comp
+xCOMP13 net1[13] VDD vout13 net2[13] VSS VIN net3[13] net4[13] vref13 net5[13] comp
+xCOMP12 net1[12] VDD vout12 net2[12] VSS VIN net3[12] net4[12] vref12 net5[12] comp
+xCOMP11 net1[11] VDD vout11 net2[11] VSS VIN net3[11] net4[11] vref11 net5[11] comp
+xCOMP10 net1[10] VDD vout10 net2[10] VSS VIN net3[10] net4[10] vref10 net5[10] comp
+xCOMP9 net1[9] VDD vout9 net2[9] VSS VIN net3[9] net4[9] vref9 net5[9] comp
+xCOMP8 net1[8] VDD vout8 net2[8] VSS VIN net3[8] net4[8] vref8 net5[8] comp
+xCOMP7 net1[7] VDD vout7 net2[7] VSS VIN net3[7] net4[7] vref7 net5[7] comp
+xCOMP6 net1[6] VDD vout6 net2[6] VSS VIN net3[6] net4[6] vref6 net5[6] comp
+xCOMP5 net1[5] VDD vout5 net2[5] VSS VIN net3[5] net4[5] vref5 net5[5] comp
+xCOMP4 net1[4] VDD vout4 net2[4] VSS VIN net3[4] net4[4] vref4 net5[4] comp
+xCOMP3 net1[3] VDD vout3 net2[3] VSS VIN net3[3] net4[3] vref3 net5[3] comp
+xCOMP2 net1[2] VDD vout2 net2[2] VSS VIN net3[2] net4[2] vref2 net5[2] comp
+xCOMP1 net1[1] VDD vout1 net2[1] VSS VIN net3[1] net4[1] vref1 net5[1] comp
+xCOMP0 net1[0] VDD vout0 net2[0] VSS VIN net3[0] net4[0] vref0 net5[0] comp
+**.ends
+
+* expanding   symbol:  schematics/comp.sym # of pins=10
+** sym_path: /home/nwells/xschem/6_bit_flash/schematics/comp.sym
+** sch_path: /home/nwells/xschem/6_bit_flash/schematics/comp.sch
+.subckt comp pa_voutp vdd vout pa_voutn vss vinp latch_voutp latch_voutn vinn pa_m1_s
+*.ipin vdd
+*.opin vout
+*.ipin vss
+*.ipin vinp
+*.ipin vinn
+*.iopin pa_voutp
+*.iopin pa_voutn
+*.iopin latch_voutp
+*.iopin latch_voutn
+*.iopin pa_m1_s
+I0 pa_m1_s vss 10u
+XM1 v_m1_d vinp pa_m1_s pa_m1_s sky130_fd_pr__nfet_01v8 L=0.5 W=20 nf=1 ad=5.8 as=5.8 pd=40.58 ps=40.58 nrd=0.0145 nrs=0.0145 sa=0
++ sb=0 sd=0 mult=1 m=1
+XM2 net1 vinn pa_m1_s pa_m1_s sky130_fd_pr__nfet_01v8 L=0.5 W=20 nf=1 ad=5.8 as=5.8 pd=40.58 ps=40.58 nrd=0.0145 nrs=0.0145 sa=0
++ sb=0 sd=0 mult=1 m=1
+XM3 v_m1_d v_m1_d vdd vdd sky130_fd_pr__pfet_01v8 L=2 W=2 nf=1 ad=0.58 as=0.58 pd=4.58 ps=4.58 nrd=0.145 nrs=0.145 sa=0 sb=0 sd=0
++ mult=1 m=1
+XM4 net1 v_m1_d vdd vdd sky130_fd_pr__pfet_01v8 L=2 W=2 nf=1 ad=0.58 as=0.58 pd=4.58 ps=4.58 nrd=0.145 nrs=0.145 sa=0 sb=0 sd=0
++ mult=1 m=1
+XM5 net2 net1 vss vss sky130_fd_pr__nfet_01v8 L=0.15 W=1 nf=1 ad=0.29 as=0.29 pd=2.58 ps=2.58 nrd=0.29 nrs=0.29 sa=0 sb=0 sd=0
++ mult=1 m=1
+XM6 net2 net1 vdd vdd sky130_fd_pr__pfet_01v8 L=0.15 W=2 nf=1 ad=0.58 as=0.58 pd=4.58 ps=4.58 nrd=0.145 nrs=0.145 sa=0 sb=0 sd=0
++ mult=1 m=1
+XM7 vout net2 vss vss sky130_fd_pr__nfet_01v8 L=0.15 W=1 nf=1 ad=0.29 as=0.29 pd=2.58 ps=2.58 nrd=0.29 nrs=0.29 sa=0 sb=0 sd=0
++ mult=1 m=1
+XM8 vout net2 vdd vdd sky130_fd_pr__pfet_01v8 L=0.15 W=2 nf=1 ad=0.58 as=0.58 pd=4.58 ps=4.58 nrd=0.145 nrs=0.145 sa=0 sb=0 sd=0
++ mult=1 m=1
+.ends
+
+.end
