@@ -1,0 +1,33 @@
+** sch_path: /home/flip_b/git/6bit_flash_adc_sky130/untitled.sch
+**.subckt untitled
+x1 vdd vss vinp vout vinn ideal_comp bw=10Meg gain=100 vdd= vss= vin_h= vin_l= vios=50m
+V1 vinp GND PULSE(0 1.8 0 5n 5n 500n 1u)
+V2 vinn GND 0.9
+V3 vdd GND 1.8
+V4 vss GND 0
+x2 vdd vss vinp vout2 vinn ideal_comp bw=10Meg gain=100 vdd= vss= vin_h= vin_l= vios=1
+**** begin user architecture code
+
+.tran 500p 10u
+
+**** end user architecture code
+**.ends
+
+* expanding   symbol:  schematics/ideal_comp.sym # of pins=5
+** sym_path: /home/flip_b/git/6bit_flash_adc_sky130/schematics/ideal_comp.sym
+** sch_path: /home/flip_b/git/6bit_flash_adc_sky130/schematics/ideal_comp.sch
+.subckt ideal_comp vdd vss vinp vout vinn  bw=100Meg gain=100 vcmh=1.6 vcml=0.2 vios=50m
+*.ipin vdd
+*.opin vout
+*.ipin vss
+*.ipin vinp
+*.ipin vinn
+B1 vp vss V = {V(vinp)<vcmh ? (V(vinp) < vcml ? vcml: V(vinp)) : vcmh} m=1
+B2 vn vss V = {V(vinn)<vcmh ? (V(vinn) < vcml ? vcml: V(vinn) + vios) : vcmh} m=1
+B3 net1 vss V = {gain*(V(vp)-V(vn)) < V(vdd) ? (gain*(V(vp)-V(vn)) < V(vss) ? V(vss) : (gain*(V(vp)-V(vn)))) : V(vdd)} m=1
+R1 vout net1 {1/(2*3.1415*bw*1p)} m=1
+C1 vout vss 1p m=1
+.ends
+
+.GLOBAL GND
+.end
