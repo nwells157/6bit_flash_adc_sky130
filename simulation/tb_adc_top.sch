@@ -1,4 +1,4 @@
-v {xschem version=3.4.6 file_version=1.2}
+v {xschem version=3.4.7RC file_version=1.2}
 G {}
 K {}
 V {}
@@ -47,6 +47,7 @@ C {devices/code.sym} 80 -190 0 0 {name=sim_code only_toplevel=false value="
 
 # Model files
 .lib /usr/local/share/pdk/sky130A/libs.tech/ngspice/sky130.lib.spice tt
+.include /usr/local/share/pdk/sky130A/libs.ref/sky130_fd_sc_hd/spice/sky130_fd_sc_hd.spice
 
 #####################
 # Global parameters #
@@ -125,6 +126,12 @@ C {devices/lab_pin.sym} 1350 -650 0 0 {name=p24 sig_type=std_logic lab=VIN}
 C {devices/lab_pin.sym} 1350 -630 0 0 {name=p25 lab=VREF}
 C {devices/lab_pin.sym} 1650 -690 0 1 {name=p26 lab=veriloga_comp_out}
 C {devices/launcher.sym} 100 -40 0 0 {name=h17 
+descr="Load waves" 
+tclcommand="
+xschem raw_read $netlist_dir/[file tail [file rootname [xschem get current_name]]].raw tran
+"
+}
+C {devices/launcher.sym} 290 -610 0 0 {name=h1 
 descr="Load waves" 
 tclcommand="
 xschem raw_read $netlist_dir/[file tail [file rootname [xschem get current_name]]].raw tran
