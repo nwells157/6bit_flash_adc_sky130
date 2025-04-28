@@ -11,7 +11,7 @@ N 90 -270 90 -260 {lab=GND}
 N 120 -270 140 -270 {lab=GND}
 N 60 -400 60 -360 {lab=VDD}
 N 140 -400 140 -360 {lab=VSS}
-C {schematics/ref_ladder_top.sym} 690 -340 0 0 {name=x1}
+C {schematics/ref_ladder_top.sym} 490 -350 0 0 {name=x1}
 C {devices/vsource.sym} 60 -330 0 0 {name=V3 value=vdd savecurrent=false}
 C {devices/vsource.sym} 140 -330 0 0 {name=V1 value=vss savecurrent=false}
 C {devices/lab_pin.sym} 60 -400 0 0 {name=p6 sig_type=std_logic lab=VDD}
@@ -35,12 +35,6 @@ wrdata data.txt vref0 vref1 vref2 vref3 vref4 vref5 vref6 vref7 vref8 vref9 vref
 
 
 "}
-C {devices/code.sym} 200 -160 0 0 {name=save_bus1 only_toplevel=false value="
-
-
-
-
-"}
-C {devices/lab_pin.sym} 540 -350 0 0 {name=p2 lab=VDD}
-C {devices/lab_pin.sym} 540 -330 0 0 {name=p3 lab=VSS}
-C {devices/lab_pin.sym} 840 -350 0 1 {name=p4 lab=vref[62..0]}
+C {devices/lab_pin.sym} 340 -360 0 0 {name=p2 lab=VDD}
+C {devices/lab_pin.sym} 340 -340 0 0 {name=p3 lab=VSS}
+C {devices/lab_pin.sym} 640 -360 0 1 {name=p4 lab=vref[62..0]}

@@ -10,7 +10,7 @@ module ideal_comp(vdd, vss, inp, inn, vout);
     electrical vout;
 
     parameter integer crash_fix = 0;
-    parameter real gain = 10;
+    parameter real gain = 1000;
     integer code;
     real value;
 

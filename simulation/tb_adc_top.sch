@@ -1,4 +1,4 @@
-v {xschem version=3.4.7RC file_version=1.2}
+v {xschem version=3.4.6 file_version=1.2}
 G {}
 K {}
 V {}
@@ -12,8 +12,8 @@ ypos2=2
 divy=5
 subdivy=4
 unity=1
-x1=-6.7341567e-07
-x2=7.1175918e-06
+x1=-1.4388617e-06
+x2=1.1449931e-05
 divx=5
 subdivx=4
 xlabmag=1.0
@@ -37,6 +37,12 @@ N 410 -90 410 -60 {lab=GND}
 N 410 -190 410 -150 {lab=VIN}
 N 300 -90 300 -60 {lab=GND}
 N 300 -190 300 -150 {lab=VREF}
+N 750 -80 750 -50 {lab=GND}
+N 750 -180 750 -140 {lab=clk}
+N 690 -530 720 -530 {lab=#net1}
+N 800 -530 830 -530 {lab=#net2}
+N 910 -530 940 -530 {lab=#net3}
+N 1020 -530 1050 -530 {lab=#net4}
 C {schematics/adc_top.sym} 880 -390 0 0 {name=xDUT}
 C {devices/gnd.sym} 110 -290 0 0 {name=l4 lab=GND}
 C {devices/vsource.sym} 80 -350 0 0 {name=V1 value=vdd savecurrent=false}
@@ -49,13 +55,15 @@ C {devices/code.sym} 80 -190 0 0 {name=sim_code only_toplevel=false value="
 .lib /usr/local/share/pdk/sky130A/libs.tech/ngspice/sky130.lib.spice tt
 .include /usr/local/share/pdk/sky130A/libs.ref/sky130_fd_sc_hd/spice/sky130_fd_sc_hd.spice
 
+.options method=gear reltol=1e-6 abstol=1e-12
+
 #####################
 # Global parameters #
 #####################
 
 .param vdd=1.8 vss=0 vref=vdd/2
-.param sin_offset=vdd/2 sin_amp=vdd/2 sin_freq=1e6 sin_period= 1/sin_freq
-.param tran_step=sin_period/1e2 tran_stop_time=sin_period*10
+.param sin_offset=vdd/2 sin_amp=vdd/2 sin_freq=100e3 sin_period= 1/sin_freq
+.param tran_step=sin_period/1e2 tran_stop_time=sin_period*4
 .param delay=sin_period*1
 
 #####################
@@ -81,7 +89,7 @@ run
 
 let lin-tstart = 1u
 let lin-stop = 99u
-# let lin-tstep = 5n
+#let lin-tstep = 5n
 linearize vin ideal_out
 
 # Save expressions
@@ -91,41 +99,36 @@ linearize vin ideal_out
 write tb_adc_top.raw
 wrdata ideal.txt vin ideal_out
 
+setplot tran1
 
 .endc
 
 "}
-C {devices/lab_pin.sym} 730 -420 0 0 {name=p2 lab=VDD}
-C {devices/lab_pin.sym} 730 -400 0 0 {name=p3 lab=VSS}
-C {devices/lab_pin.sym} 730 -380 0 0 {name=p4 lab=VIN}
-C {devices/lab_pin.sym} 730 -360 0 0 {name=p5 lab=VREF}
+C {devices/lab_pin.sym} 730 -430 0 0 {name=p2 lab=VDD}
+C {devices/lab_pin.sym} 730 -410 0 0 {name=p3 lab=VSS}
+C {devices/lab_pin.sym} 730 -390 0 0 {name=p4 lab=VIN}
+C {devices/lab_pin.sym} 730 -370 0 0 {name=p5 lab=VREF}
 C {devices/lab_pin.sym} 410 -190 0 0 {name=p11 sig_type=std_logic lab=VIN}
 C {devices/vsource.sym} 410 -120 0 0 {name=V3 value="DC 0 AC 1 SIN(\{sin_offset\} \{sin_amp\} \{sin_freq\})"}
 C {devices/gnd.sym} 410 -60 0 0 {name=l1 lab=GND}
 C {devices/gnd.sym} 300 -60 0 0 {name=l2 lab=GND}
 C {devices/vsource.sym} 300 -120 0 0 {name=V4 value=vref}
 C {devices/lab_pin.sym} 300 -190 0 0 {name=p8 sig_type=std_logic lab=VREF}
-C {devices/lab_pin.sym} 1030 -400 0 1 {name=p6 lab=vref[62..0]}
-C {devices/lab_pin.sym} 1030 -380 0 1 {name=p10 lab=comp_out[62..0]}
-C {devices/lab_pin.sym} 1030 -420 0 1 {name=p1 lab=OUT[5..0]}
-C {devices/lab_pin.sym} 1660 -370 0 1 {name=p12 lab=ideal_out}
-C {devices/lab_pin.sym} 1360 -370 0 0 {name=p13 lab=VDD}
-C {devices/lab_pin.sym} 1360 -350 0 0 {name=p14 lab=VSS}
-C {devices/lab_pin.sym} 1360 -330 0 0 {name=p15 lab=VREF}
-C {devices/lab_pin.sym} 1360 -310 0 0 {name=p16 lab=OUT0}
-C {devices/lab_pin.sym} 1360 -290 0 0 {name=p17 lab=OUT1}
-C {devices/lab_pin.sym} 1360 -270 0 0 {name=p18 lab=OUT2}
-C {devices/lab_pin.sym} 1360 -250 0 0 {name=p19 lab=OUT3}
-C {devices/lab_pin.sym} 1360 -230 0 0 {name=p20 lab=OUT4}
-C {devices/lab_pin.sym} 1360 -210 0 0 {name=p21 lab=OUT5}
-C {schematics/ideal_dac.sym} 1510 -290 0 0 {name=xDAC_CHECK model=ideal_dac_cell}
-C {schematics/ideal_comp_veriloga.sym} 1500 -660 0 0 {name=xVERILOGA_TEST_COMP}
-C {devices/lab_pin.sym} 1350 -690 0 0 {name=p22 lab=VDD}
-C {devices/lab_pin.sym} 1350 -670 0 0 {name=p23 lab=VSS}
-C {devices/lab_pin.sym} 1350 -650 0 0 {name=p24 sig_type=std_logic lab=VIN}
-C {devices/lab_pin.sym} 1350 -630 0 0 {name=p25 lab=VREF}
-C {devices/lab_pin.sym} 1650 -690 0 1 {name=p26 lab=veriloga_comp_out}
-C {devices/launcher.sym} 100 -40 0 0 {name=h17 
+C {devices/lab_pin.sym} 1030 -410 0 1 {name=p6 lab=vref[62..0]}
+C {devices/lab_pin.sym} 1030 -390 0 1 {name=p10 lab=comp_out[62..0]}
+C {devices/lab_pin.sym} 1030 -430 0 1 {name=p1 lab=OUT[5..0]}
+C {devices/lab_pin.sym} 1690 -480 0 1 {name=p12 lab=ideal_out}
+C {devices/lab_pin.sym} 1390 -480 0 0 {name=p13 lab=VDD}
+C {devices/lab_pin.sym} 1390 -460 0 0 {name=p14 lab=VSS}
+C {devices/lab_pin.sym} 1390 -440 0 0 {name=p15 lab=VREF}
+C {devices/lab_pin.sym} 1390 -420 0 0 {name=p16 lab=OUT0}
+C {devices/lab_pin.sym} 1390 -400 0 0 {name=p17 lab=OUT1}
+C {devices/lab_pin.sym} 1390 -380 0 0 {name=p18 lab=OUT2}
+C {devices/lab_pin.sym} 1390 -360 0 0 {name=p19 lab=OUT3}
+C {devices/lab_pin.sym} 1390 -340 0 0 {name=p20 lab=OUT4}
+C {devices/lab_pin.sym} 1390 -320 0 0 {name=p21 lab=OUT5}
+C {schematics/ideal_dac.sym} 1540 -400 0 0 {name=xDAC_CHECK model=ideal_dac_cell}
+C {devices/launcher.sym} 90 -40 0 0 {name=h17 
 descr="Load waves" 
 tclcommand="
 xschem raw_read $netlist_dir/[file tail [file rootname [xschem get current_name]]].raw tran
@@ -137,3 +140,14 @@ tclcommand="
 xschem raw_read $netlist_dir/[file tail [file rootname [xschem get current_name]]].raw tran
 "
 }
+C {devices/vsource.sym} 750 -110 0 0 {name=V5 value="PULSE(0 1.8 0 1p 1p 20n 40n)"}
+C {devices/gnd.sym} 750 -50 0 0 {name=l3 lab=GND}
+C {devices/lab_pin.sym} 750 -180 0 0 {name=p22 lab=clk}
+C {sky130_stdcells/buf_1.sym} 650 -530 0 0 {name=x1 VGND=vss VNB=vss VPB=vdd VPWR=vdd prefix=sky130_fd_sc_hd__ }
+C {sky130_stdcells/buf_2.sym} 760 -530 0 0 {name=x2 VGND=vss VNB=vss VPB=vdd VPWR=vdd prefix=sky130_fd_sc_hd__ }
+C {sky130_stdcells/buf_4.sym} 870 -530 0 0 {name=x3 VGND=vss VNB=vss VPB=vdd VPWR=vdd prefix=sky130_fd_sc_hd__ }
+C {sky130_stdcells/buf_8.sym} 980 -530 0 0 {name=x4 VGND=vss VNB=vss VPB=vdd VPWR=vdd prefix=sky130_fd_sc_hd__ }
+C {sky130_stdcells/buf_16.sym} 1090 -530 0 0 {name=x5 VGND=vss VNB=vss VPB=vdd VPWR=vdd prefix=sky130_fd_sc_hd__ }
+C {devices/lab_pin.sym} 610 -530 0 0 {name=p24 lab=clk}
+C {devices/lab_pin.sym} 1130 -530 0 1 {name=p25 lab=clk_buff}
+C {devices/lab_pin.sym} 730 -350 0 0 {name=p23 lab=clk_buff}

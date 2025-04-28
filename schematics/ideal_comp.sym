@@ -1,8 +1,8 @@
-v {xschem version=3.4.7RC file_version=1.2}
+v {xschem version=3.4.6 file_version=1.2}
 G {}
 K {type=subcircuit
-format="@name @pinlist @symname bw=@bw gain=@gain vdd=@vdd vss=@vss vin_h=@vin_h vin_l=@vin_l vios=@vios"
-template="name=x1 bw=100Meg gain=100 vcmh=1.6 vcml=0.2 vios=50m"
+format="@name @pinlist @symname bw=@bw gain=@gain vdd=@vdd vss=@vss vcmh=@vcmh vcml=@vcml vios=@vios"
+template="name=x1 bw=100Meg gain=1000 vcmh=1.8 vcml=0 vios=50m"
 }
 V {}
 S {}

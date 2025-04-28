@@ -1,31 +1,39 @@
 ** sch_path: /home/nwells/xschem/6_bit_flash/schematics/comp.sch
-**.subckt comp pa_voutp vdd vout pa_voutn vss vinp latch_voutp latch_voutn vinn pa_m1_s
+**.subckt comp vout vdd vss vinp vinn clk
 *.ipin vdd
 *.opin vout
 *.ipin vss
 *.ipin vinp
 *.ipin vinn
-*.iopin pa_voutp
-*.iopin pa_voutn
-*.iopin latch_voutp
-*.iopin latch_voutn
-*.iopin pa_m1_s
+*.ipin clk
+XM6 net1 clk vss net2 sky130_fd_pr__nfet_01v8 L=0.15 W=1 nf=1 ad=0.29 as=0.29 pd=2.58 ps=2.58 nrd=0.29 nrs=0.29 sa=0 sb=0 sd=0
++ mult=1 m=1
+XM10 voutn voutp vdd vdd sky130_fd_pr__pfet_01v8 L=0.15 W=1 nf=1 ad=0.29 as=0.29 pd=2.58 ps=2.58 nrd=0.29 nrs=0.29 sa=0 sb=0 sd=0
++ mult=1 m=1
+xBUFF voutp vss vss vdd vdd voutp_buff sky130_fd_sc_hd__buf_6
+xBUFF1 voutn vss vss vdd vdd voutn_buff sky130_fd_sc_hd__buf_6
 I0 pa_m1_s vss 10u
-XM1 v_m1_d vinp pa_m1_s pa_m1_s sky130_fd_pr__nfet_01v8 L=0.5 W=20 nf=1 ad=5.8 as=5.8 pd=40.58 ps=40.58 nrd=0.0145 nrs=0.0145 sa=0
-+ sb=0 sd=0 mult=1 m=1
-XM2 net1 vinn pa_m1_s pa_m1_s sky130_fd_pr__nfet_01v8 L=0.5 W=20 nf=1 ad=5.8 as=5.8 pd=40.58 ps=40.58 nrd=0.0145 nrs=0.0145 sa=0
-+ sb=0 sd=0 mult=1 m=1
-XM3 v_m1_d v_m1_d vdd vdd sky130_fd_pr__pfet_01v8 L=2 W=2 nf=1 ad=0.58 as=0.58 pd=4.58 ps=4.58 nrd=0.145 nrs=0.145 sa=0 sb=0 sd=0
+XM11 v_m1_d voutp_buff pa_m1_s vss sky130_fd_pr__nfet_01v8 L=0.15 W=50 nf=1 ad=14.5 as=14.5 pd=100.58 ps=100.58 nrd=0.0058
++ nrs=0.0058 sa=0 sb=0 sd=0 mult=1 m=1
+XM12 vout voutn_buff pa_m1_s vss sky130_fd_pr__nfet_01v8 L=0.15 W=50 nf=1 ad=14.5 as=14.5 pd=100.58 ps=100.58 nrd=0.0058
++ nrs=0.0058 sa=0 sb=0 sd=0 mult=1 m=1
+XM13 v_m1_d v_m1_d vdd vdd sky130_fd_pr__pfet_01v8 L=0.5 W=2 nf=1 ad=0.58 as=0.58 pd=4.58 ps=4.58 nrd=0.145 nrs=0.145 sa=0 sb=0
++ sd=0 mult=1 m=1
+XM14 vout v_m1_d vdd vdd sky130_fd_pr__pfet_01v8 L=0.5 W=2 nf=1 ad=0.58 as=0.58 pd=4.58 ps=4.58 nrd=0.145 nrs=0.145 sa=0 sb=0 sd=0
 + mult=1 m=1
-XM4 net1 v_m1_d vdd vdd sky130_fd_pr__pfet_01v8 L=2 W=2 nf=1 ad=0.58 as=0.58 pd=4.58 ps=4.58 nrd=0.145 nrs=0.145 sa=0 sb=0 sd=0
+XM1 vinp_d vinp net1 vss sky130_fd_pr__nfet_01v8 L=0.15 W=1 nf=1 ad=0.29 as=0.29 pd=2.58 ps=2.58 nrd=0.29 nrs=0.29 sa=0 sb=0 sd=0
 + mult=1 m=1
-XM5 net2 net1 vss vss sky130_fd_pr__nfet_01v8 L=0.15 W=1 nf=1 ad=0.29 as=0.29 pd=2.58 ps=2.58 nrd=0.29 nrs=0.29 sa=0 sb=0 sd=0
+XM2 vinn_d vinn net1 vss sky130_fd_pr__nfet_01v8 L=0.15 W=1 nf=1 ad=0.29 as=0.29 pd=2.58 ps=2.58 nrd=0.29 nrs=0.29 sa=0 sb=0 sd=0
 + mult=1 m=1
-XM6 net2 net1 vdd vdd sky130_fd_pr__pfet_01v8 L=0.15 W=2 nf=1 ad=0.58 as=0.58 pd=4.58 ps=4.58 nrd=0.145 nrs=0.145 sa=0 sb=0 sd=0
+XM3 voutn voutp vinp_d vss sky130_fd_pr__nfet_01v8 L=0.15 W=1 nf=1 ad=0.29 as=0.29 pd=2.58 ps=2.58 nrd=0.29 nrs=0.29 sa=0 sb=0
++ sd=0 mult=1 m=1
+XM4 voutp voutn vinn_d vss sky130_fd_pr__nfet_01v8 L=0.15 W=1 nf=1 ad=0.29 as=0.29 pd=2.58 ps=2.58 nrd=0.29 nrs=0.29 sa=0 sb=0
++ sd=0 mult=1 m=1
+XM5 voutp voutn vdd vdd sky130_fd_pr__pfet_01v8 L=0.15 W=1 nf=1 ad=0.29 as=0.29 pd=2.58 ps=2.58 nrd=0.29 nrs=0.29 sa=0 sb=0 sd=0
 + mult=1 m=1
-XM7 vout net2 vss vss sky130_fd_pr__nfet_01v8 L=0.15 W=1 nf=1 ad=0.29 as=0.29 pd=2.58 ps=2.58 nrd=0.29 nrs=0.29 sa=0 sb=0 sd=0
+XM7 voutp clk vdd vdd sky130_fd_pr__pfet_01v8 L=0.15 W=1 nf=1 ad=0.29 as=0.29 pd=2.58 ps=2.58 nrd=0.29 nrs=0.29 sa=0 sb=0 sd=0
 + mult=1 m=1
-XM8 vout net2 vdd vdd sky130_fd_pr__pfet_01v8 L=0.15 W=2 nf=1 ad=0.58 as=0.58 pd=4.58 ps=4.58 nrd=0.145 nrs=0.145 sa=0 sb=0 sd=0
+XM8 voutn clk vdd vdd sky130_fd_pr__pfet_01v8 L=0.15 W=1 nf=1 ad=0.29 as=0.29 pd=2.58 ps=2.58 nrd=0.29 nrs=0.29 sa=0 sb=0 sd=0
 + mult=1 m=1
 **.ends
 .end
