@@ -12,8 +12,8 @@ ypos2=2
 divy=5
 subdivy=4
 unity=1
-x1=-1.4388617e-06
-x2=1.1449931e-05
+x1=5.0003355e-09
+x2=2e-08
 divx=5
 subdivx=4
 xlabmag=1.0
@@ -39,10 +39,10 @@ N 300 -90 300 -60 {lab=GND}
 N 300 -190 300 -150 {lab=VREF}
 N 750 -80 750 -50 {lab=GND}
 N 750 -180 750 -140 {lab=clk}
-N 690 -530 720 -530 {lab=#net1}
-N 800 -530 830 -530 {lab=#net2}
-N 910 -530 940 -530 {lab=#net3}
-N 1020 -530 1050 -530 {lab=#net4}
+N 1140 -80 1170 -80 {lab=#net1}
+N 1250 -80 1280 -80 {lab=#net2}
+N 1360 -80 1390 -80 {lab=#net3}
+N 1470 -80 1500 -80 {lab=#net4}
 C {schematics/adc_top.sym} 880 -390 0 0 {name=xDUT}
 C {devices/gnd.sym} 110 -290 0 0 {name=l4 lab=GND}
 C {devices/vsource.sym} 80 -350 0 0 {name=V1 value=vdd savecurrent=false}
@@ -62,7 +62,7 @@ C {devices/code.sym} 80 -190 0 0 {name=sim_code only_toplevel=false value="
 #####################
 
 .param vdd=1.8 vss=0 vref=vdd/2
-.param sin_offset=vdd/2 sin_amp=vdd/2 sin_freq=100e3 sin_period= 1/sin_freq
+.param sin_offset=vdd/2 sin_amp=vdd/2 sin_freq=200e6 sin_period= 1/sin_freq
 .param tran_step=sin_period/1e2 tran_stop_time=sin_period*4
 .param delay=sin_period*1
 
@@ -89,7 +89,7 @@ run
 
 let lin-tstart = 1u
 let lin-stop = 99u
-#let lin-tstep = 5n
+let lin-tstep = 5n
 linearize vin ideal_out
 
 # Save expressions
@@ -128,13 +128,7 @@ C {devices/lab_pin.sym} 1390 -360 0 0 {name=p19 lab=OUT3}
 C {devices/lab_pin.sym} 1390 -340 0 0 {name=p20 lab=OUT4}
 C {devices/lab_pin.sym} 1390 -320 0 0 {name=p21 lab=OUT5}
 C {schematics/ideal_dac.sym} 1540 -400 0 0 {name=xDAC_CHECK model=ideal_dac_cell}
-C {devices/launcher.sym} 90 -40 0 0 {name=h17 
-descr="Load waves" 
-tclcommand="
-xschem raw_read $netlist_dir/[file tail [file rootname [xschem get current_name]]].raw tran
-"
-}
-C {devices/launcher.sym} 290 -610 0 0 {name=h1 
+C {devices/launcher.sym} 90 -30 0 0 {name=h17 
 descr="Load waves" 
 tclcommand="
 xschem raw_read $netlist_dir/[file tail [file rootname [xschem get current_name]]].raw tran
@@ -143,11 +137,11 @@ xschem raw_read $netlist_dir/[file tail [file rootname [xschem get current_name]
 C {devices/vsource.sym} 750 -110 0 0 {name=V5 value="PULSE(0 1.8 0 1p 1p 20n 40n)"}
 C {devices/gnd.sym} 750 -50 0 0 {name=l3 lab=GND}
 C {devices/lab_pin.sym} 750 -180 0 0 {name=p22 lab=clk}
-C {sky130_stdcells/buf_1.sym} 650 -530 0 0 {name=x1 VGND=vss VNB=vss VPB=vdd VPWR=vdd prefix=sky130_fd_sc_hd__ }
-C {sky130_stdcells/buf_2.sym} 760 -530 0 0 {name=x2 VGND=vss VNB=vss VPB=vdd VPWR=vdd prefix=sky130_fd_sc_hd__ }
-C {sky130_stdcells/buf_4.sym} 870 -530 0 0 {name=x3 VGND=vss VNB=vss VPB=vdd VPWR=vdd prefix=sky130_fd_sc_hd__ }
-C {sky130_stdcells/buf_8.sym} 980 -530 0 0 {name=x4 VGND=vss VNB=vss VPB=vdd VPWR=vdd prefix=sky130_fd_sc_hd__ }
-C {sky130_stdcells/buf_16.sym} 1090 -530 0 0 {name=x5 VGND=vss VNB=vss VPB=vdd VPWR=vdd prefix=sky130_fd_sc_hd__ }
-C {devices/lab_pin.sym} 610 -530 0 0 {name=p24 lab=clk}
-C {devices/lab_pin.sym} 1130 -530 0 1 {name=p25 lab=clk_buff}
+C {sky130_stdcells/buf_1.sym} 1100 -80 0 0 {name=x1 VGND=vss VNB=vss VPB=vdd VPWR=vdd prefix=sky130_fd_sc_hd__ }
+C {sky130_stdcells/buf_2.sym} 1210 -80 0 0 {name=x2 VGND=vss VNB=vss VPB=vdd VPWR=vdd prefix=sky130_fd_sc_hd__ }
+C {sky130_stdcells/buf_4.sym} 1320 -80 0 0 {name=x3 VGND=vss VNB=vss VPB=vdd VPWR=vdd prefix=sky130_fd_sc_hd__ }
+C {sky130_stdcells/buf_8.sym} 1430 -80 0 0 {name=x4 VGND=vss VNB=vss VPB=vdd VPWR=vdd prefix=sky130_fd_sc_hd__ }
+C {sky130_stdcells/buf_16.sym} 1540 -80 0 0 {name=x5 VGND=vss VNB=vss VPB=vdd VPWR=vdd prefix=sky130_fd_sc_hd__ }
+C {devices/lab_pin.sym} 1060 -80 0 0 {name=p24 lab=clk}
+C {devices/lab_pin.sym} 1580 -80 0 1 {name=p25 lab=clk_buff}
 C {devices/lab_pin.sym} 730 -350 0 0 {name=p23 lab=clk_buff}
