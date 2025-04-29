@@ -1,4 +1,4 @@
-v {xschem version=3.4.6 file_version=1.2}
+v {xschem version=3.4.7RC file_version=1.2}
 G {}
 K {}
 V {}
@@ -12,7 +12,7 @@ ypos2=2
 divy=5
 subdivy=4
 unity=1
-x1=5.0003355e-09
+x1=5.0003357e-09
 x2=2e-08
 divx=5
 subdivx=4
@@ -145,3 +145,9 @@ C {sky130_stdcells/buf_16.sym} 1540 -80 0 0 {name=x5 VGND=vss VNB=vss VPB=vdd VP
 C {devices/lab_pin.sym} 1060 -80 0 0 {name=p24 lab=clk}
 C {devices/lab_pin.sym} 1580 -80 0 1 {name=p25 lab=clk_buff}
 C {devices/lab_pin.sym} 730 -350 0 0 {name=p23 lab=clk_buff}
+C {devices/launcher.sym} 200 -600 0 0 {name=h1 
+descr="Load waves" 
+tclcommand="
+xschem raw_read $netlist_dir/[file tail [file rootname [xschem get current_name]]].raw tran
+"
+}

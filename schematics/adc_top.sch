@@ -1,4 +1,4 @@
-v {xschem version=3.4.6 file_version=1.2}
+v {xschem version=3.4.7RC file_version=1.2}
 G {}
 K {}
 V {}
@@ -23,8 +23,6 @@ C {devices/lab_pin.sym} 1110 -550 0 0 {name=p7 lab=VIN}
 C {devices/lab_pin.sym} 1410 -610 0 1 {name=p2 lab=comp_out[62..0]}
 C {devices/iopin.sym} 120 -160 0 0 {name=p14 lab=vref[62..0]}
 C {devices/iopin.sym} 120 -140 0 0 {name=p15 lab=comp_out[62..0]}
-C {schematics/decoder_veriloga_top.sym} 2060 -340 0 0 {name=xVERILOGA_DECODER_TOP model=decoder_6bit_cell
-}
 C {devices/lab_pin.sym} 1910 -370 0 0 {name=p29 lab=VDD}
 C {devices/lab_pin.sym} 2210 -370 0 1 {name=p30 lab=OUT[5..0]}
 C {devices/lab_pin.sym} 1910 -350 0 0 {name=p31 lab=comp_out[62..0]}
@@ -38,8 +36,6 @@ C {devices/ipin.sym} 80 -100 0 0 {name=p34 lab=clk}
 C {devices/lab_pin.sym} 1110 -530 0 0 {name=p36 lab=clk}
 C {schematics/comp_top_ideal.sym} 1260 -340 0 0 {name=xIDEAL_COMP_TOP
 }
-C {schematics/decoder_top.sym} 2060 -570 0 0 {name=xDECODER_TOP
-spice_ignore=true}
 C {devices/lab_pin.sym} 1910 -550 0 0 {name=p4 lab=comp_out[62..0]}
 C {devices/lab_pin.sym} 1910 -590 0 0 {name=p5 lab=VDD}
 C {devices/lab_pin.sym} 1910 -570 0 0 {name=p17 lab=VSS}
@@ -49,3 +45,6 @@ C {devices/lab_pin.sym} 1110 -310 0 0 {name=p21 lab=VIN}
 C {devices/lab_pin.sym} 1110 -370 0 0 {name=p22 lab=VDD}
 C {devices/lab_pin.sym} 1110 -350 0 0 {name=p23 lab=VSS}
 C {devices/lab_pin.sym} 1410 -370 0 1 {name=p24 lab=comp_out[62..0]}
+C {schematics/encoder_top.sym} 2060 -570 0 0 {name=x1
+spice_ignore=true}
+C {schematics/encoder_veriloga_top.sym} 2060 -340 0 0 {name=x2 model=decoder_6bit_cell}
