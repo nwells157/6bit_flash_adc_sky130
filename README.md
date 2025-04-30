@@ -1,6 +1,6 @@
 # A 6 bit flash ADC using open source tools and SkyWater130 PDK
 
-[Top Block Diagram](/images/adc_top.pdf)
+![Top Schematic](/images/adc_top.pdf)
 This project displays a framework for a 6-bit ADC that can be used for a future Tiny Tapeout run. The
 team was able to download and use open-source tools for the entire flow and work on the project through a
 git repository. The benefit of this is that anyone can clone the designs and simulate the design with relative
